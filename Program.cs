@@ -1,10 +1,11 @@
-﻿namespace ExcelToJson
+﻿using Autofac;
+
+namespace ExcelToJson;
+
+public class Program
 {
-    internal class Program
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            
-        }
+        var builder = new ContainerBuilder();
     }
 }
