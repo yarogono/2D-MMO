@@ -10,4 +10,9 @@ public class TcpServer
     {
         _logger = logger;
     }
+
+    public Task RunAsync(string chatServerEndpoint)
+    {
+        throw new NotImplementedException();
+    }
 }
