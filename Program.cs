@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using ChatServer.Logging;
+using ChatServer.Network;
 
 namespace ExcelToJson;
 
@@ -12,12 +13,12 @@ public class Program
         var builder = new ContainerBuilder();
 
         builder.RegisterModule<LoggingModule>();
-
+        builder.RegisterModule<TcpModule>();
 
         var container = builder.Build();
         var logger = container.Resolve<IChatLogger>();
+        var tcpServer = container.Resolve<TcpServer>();
 
-
-        logger.ConsoleLog("Chat Server");
+        logger.ConsoleLog("Start Chat Server");
     }
 }

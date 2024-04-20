@@ -14,7 +14,6 @@
 
   <ItemGroup>
     <Folder Include="Configuration\" />
-    <Folder Include="Network\" />
   </ItemGroup>
 
 </Project>
