@@ -1,6 +1,6 @@
 ﻿using System.IO.Compression;
 
-namespace ChatServer.Utils
+namespace ChatServer.Zip
 {
     public class ZipService
     {

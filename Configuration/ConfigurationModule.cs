@@ -6,6 +6,6 @@ public class ConfigurationModule : Module
 {
     protected override void Load(ContainerBuilder builder)
     {
-        builder.Register(context => new ConfigurationLoader().GetMangosConfiguration()).SingleInstance();
+        builder.Register(context => new ConfigurationLoader().GetChatServerConfiguration()).SingleInstance();
     }
 }

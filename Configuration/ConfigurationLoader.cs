@@ -6,7 +6,7 @@ internal class ConfigurationLoader
 {
     private const string ConfigurationFileName = "configuration.json";
 
-    public ChatServerConfiguration GetMangosConfiguration()
+    public ChatServerConfiguration GetChatServerConfiguration()
     {
         var configuration = ReadConfigurationAsync();
         var chatServerConfiguration = JsonSerializer.Deserialize<ChatServerConfiguration>(configuration);
