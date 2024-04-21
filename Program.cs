@@ -7,12 +7,7 @@ namespace ExcelToJson;
 
 public class Program
 {
-    static void Main(string[] args)
-    {
-        Run();
-    }
-
-    static async void Run()
+    static async void Main(string[] args)
     {
         Console.Title = "Chat Server";
 
@@ -26,7 +21,7 @@ public class Program
         var configuration = container.Resolve<ChatServerConfiguration>();
         var logger = container.Resolve<IChatLogger>();
         var tcpServer = container.Resolve<TcpServer>();
-        
+
         logger.ConsoleLog("Start Chat Server");
 
         await tcpServer.RunAsync(configuration.ChatServerEndpoint);
