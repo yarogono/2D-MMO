@@ -1,9 +1,9 @@
 ﻿using Autofac;
 using ChatServer.Configuration;
 using ChatServer.Logging;
-using ChatServer.Network;
+using ChatServer.Tcp;
 
-namespace ExcelToJson;
+namespace ChatServer;
 
 public class Program
 {

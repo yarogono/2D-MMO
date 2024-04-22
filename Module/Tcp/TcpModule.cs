@@ -1,6 +1,6 @@
 ﻿using Autofac;
 
-namespace ChatServer.Network;
+namespace ChatServer.Tcp;
 
 public class TcpModule : Module
 {

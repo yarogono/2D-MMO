@@ -1,6 +1,6 @@
 ﻿using System.Net.Sockets;
 
-namespace ChatServer.Network;
+namespace ChatServer.Tcp;
 
 public interface ITcpConnection
 {

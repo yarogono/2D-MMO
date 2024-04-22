@@ -1,9 +1,9 @@
-﻿using ChatServer.Logging;
-using System.Net.Sockets;
+﻿using System.Net.Sockets;
 using System.Net;
 using Autofac;
+using ChatServer.Logging;
 
-namespace ChatServer.Network;
+namespace ChatServer.Tcp;
 
 public class TcpServer
 {
