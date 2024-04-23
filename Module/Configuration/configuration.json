@@ -1,9 +1,7 @@
 {
+  "ChatServerEndpoint": "127.0.0.1:3724",
+  "LogFilePath": "../../Log/file.log",
   "AccountDataBaseConnectionString": "Server=localhost;Port=3306;User ID=root;Password=rootpass;Database=mangosVBaccounts;Compress=false;Connection Timeout=5;",
-  "ChatServer": {
-    "ChatServerEndpoint": "127.0.0.1:3724"
-  },
-  "LogFilePath": "../../../Log/file.log",
   "Cluster": {
     "ClusterServerEndpoint": "127.0.0.1:8085",
     "ClusterListenAddress": "127.0.0.1",

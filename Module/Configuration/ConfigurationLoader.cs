@@ -4,7 +4,7 @@ namespace ChatServer.Configuration;
 
 internal class ConfigurationLoader
 {
-    private const string ConfigurationFileName = "configuration.json";
+    private const string ConfigurationFileFullPathName = "../../../Module/Configuration/configuration.json";
 
     public ChatServerConfiguration GetChatServerConfiguration()
     {
@@ -12,17 +12,17 @@ internal class ConfigurationLoader
         var chatServerConfiguration = JsonSerializer.Deserialize<ChatServerConfiguration>(configuration);
         if (chatServerConfiguration == null)
         {
-            throw new Exception($"Unable to deserialzie {ConfigurationFileName}");
+            throw new Exception($"Unable to deserialzie {ConfigurationFileFullPathName}");
         }
         return chatServerConfiguration;
     }
 
     private string ReadConfigurationAsync()
     {
-        if (!File.Exists(ConfigurationFileName))
+        if (!File.Exists(ConfigurationFileFullPathName))
         {
-            throw new Exception($"Unable to locate {ConfigurationFileName}");
+            throw new Exception($"Unable to locate {ConfigurationFileFullPathName}");
         }
-        return File.ReadAllText(ConfigurationFileName);
+        return File.ReadAllText(ConfigurationFileFullPathName);
     }
 }
