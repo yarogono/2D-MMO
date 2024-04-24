@@ -5,7 +5,9 @@ VisualStudioVersion = 17.6.33801.468
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChatServer", "ChatServer.csproj", "{CF0DEBF8-A61F-4524-B55A-2726AA5D1824}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatDummyClient", "ChatDummyClient\ChatDummyClient.csproj", "{AE6824A8-54C9-4985-AA5B-E114899C285C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChatDummyClient", "ChatDummyClient\ChatDummyClient.csproj", "{AE6824A8-54C9-4985-AA5B-E114899C285C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "Server\Server.csproj", "{CC1D4C3C-F07E-44AA-9475-3A5F05804F2B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{AE6824A8-54C9-4985-AA5B-E114899C285C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE6824A8-54C9-4985-AA5B-E114899C285C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE6824A8-54C9-4985-AA5B-E114899C285C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC1D4C3C-F07E-44AA-9475-3A5F05804F2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC1D4C3C-F07E-44AA-9475-3A5F05804F2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC1D4C3C-F07E-44AA-9475-3A5F05804F2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC1D4C3C-F07E-44AA-9475-3A5F05804F2B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
