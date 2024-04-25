@@ -7,6 +7,6 @@ internal class ServerTcpConnection : ITcpConnection
 {
     public Task ExecuteAsync(Socket socket, CancellationToken cancellationToken)
     {
-        throw new NotImplementedException();
+        return null;
     }
 }
