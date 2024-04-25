@@ -2,7 +2,7 @@
 
 namespace Server.Network;
 
-internal sealed class PacketReader
+public sealed class PacketReader
 {
     private Memory<byte> data;
 

@@ -1,8 +1,9 @@
-﻿using System.Buffers;
+﻿using Server.Responses;
+using System.Buffers;
 
 namespace Server.Network;
 
-internal sealed class HandlerResult : IDisposable
+public sealed class HandlerResult : IDisposable
 {
     private readonly IResponseMessage[] messages;
     private readonly int length;
