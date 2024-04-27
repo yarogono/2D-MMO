@@ -3,8 +3,8 @@
 namespace Server.Network;
 
 public sealed class HandlerDispatcher<TRequest, THandler> : IHandlerDispatcher
-    where TRequest : IRequestMessage<TRequest>
-    where THandler : IHandler<TRequest>
+    //where TRequest : IRequestMessage<TRequest>
+    //where THandler : IHandler<TRequest>
 {
     private readonly THandler handler;
 
