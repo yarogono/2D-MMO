@@ -13,10 +13,10 @@ public sealed class HandlerDispatcher<TRequest, THandler> : IHandlerDispatcher
         this.handler = handler;
     }
 
-    public Opcodes Opcode => TRequest.Opcode;
+    public Opcodes Opcode => IRequestMessage<TRequest>.Opcode;
 
     public Task<HandlerResult> ExectueAsync(PacketReader reader)
     {
-        return handler.ExectueAsync(TRequest.Read(reader));
+        return handler.ExectueAsync(IRequestMessage<TRequest>.Read(reader));
     }
 }

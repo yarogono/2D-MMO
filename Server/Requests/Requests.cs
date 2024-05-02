@@ -4,7 +4,7 @@ namespace Server;
 
 public interface IRequestMessage<T> where T : IRequestMessage<T>
 {
-    Opcodes Opcode { get; }
+    static Opcodes Opcode { get; }
 
-    T Read(PacketReader reader);
+    static T Read(PacketReader reader);
 }
