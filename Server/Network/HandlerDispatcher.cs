@@ -7,16 +7,18 @@ public sealed class HandlerDispatcher<TRequest, THandler> : IHandlerDispatcher
     where THandler : IHandler<TRequest>
 {
     private readonly THandler handler;
+    private readonly IRequestMessage<TRequest> requestMessage;
 
-    public HandlerDispatcher(THandler handler)
+    public HandlerDispatcher(THandler handler, IRequestMessage<TRequest> requestMessage)
     {
         this.handler = handler;
+        this.requestMessage = requestMessage;
     }
 
-    public Opcodes Opcode => IRequestMessage<TRequest>.Opcode;
+    public Opcodes Opcode => requestMessage.Opcode;
 
     public Task<HandlerResult> ExectueAsync(PacketReader reader)
     {
-        return handler.ExectueAsync(IRequestMessage<TRequest>.Read(reader));
+        return handler.ExectueAsync(requestMessage.Read(reader));
     }
 }
