@@ -12,6 +12,9 @@ public class Program
         Run();
     }
 
+    // Autofac DI를 사용해서 서버에 필요한 객체들을 모듈화
+    // ContainerBuilder를 사용해서 DI 컨테이너 설정
+    // 서버에 필요한 객체를 모듈화해서 의존성을 해결
     static async void Run()
     {
         Console.Title = "Chat Server";
