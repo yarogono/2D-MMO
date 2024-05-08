@@ -8,11 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ChatServer.csproj" />
+    <Folder Include="Common\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Common\" />
+    <ProjectReference Include="..\ChatDummyClient\ChatDummyClient.csproj" />
   </ItemGroup>
 
 </Project>
