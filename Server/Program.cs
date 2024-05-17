@@ -7,6 +7,7 @@ namespace ChatServer;
 
 public class Program
 {
+
     static void Main(string[] args)
     {
         Run();
@@ -27,12 +28,12 @@ public class Program
 
         var container = builder.Build();
         var configuration = container.Resolve<ChatServerConfiguration>();
-        var logger = container.Resolve<IChatLogger>();
+        var logger = container.Resolve<IChatServerLogger>();
         var tcpServer = container.Resolve<TcpServer>();
 
-        logger.CreateLogger();
+        //logger.CreateLogger();
 
-        logger.ConsoleLog("Start Chat Server");
+        logger.Information("Start Chat Server");
 
         await tcpServer.RunAsync(configuration.ChatServerEndpoint);
     }

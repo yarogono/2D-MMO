@@ -20,6 +20,7 @@
     <ProjectReference Include="..\ChatDummyClient\ChatDummyClient.csproj" />
     <ProjectReference Include="..\Configuration\Configuration.csproj" />
     <ProjectReference Include="..\Logging\Logging.csproj" />
+    <ProjectReference Include="..\Tcp\Tcp.csproj" />
   </ItemGroup>
 
 </Project>

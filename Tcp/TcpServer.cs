@@ -7,10 +7,10 @@ namespace ChatServer.Tcp;
 
 public class TcpServer
 {
-    private readonly IChatLogger _logger;
+    private readonly IChatServerLogger _logger;
     private readonly ILifetimeScope _lifetimeScope;
 
-    public TcpServer(IChatLogger logger, ILifetimeScope lifetimeScope)
+    public TcpServer(IChatServerLogger logger, ILifetimeScope lifetimeScope)
     {
         _logger = logger;
         _lifetimeScope = lifetimeScope;
@@ -22,7 +22,7 @@ public class TcpServer
         socket.Bind(IPEndPoint.Parse(endpoint));
         socket.Listen(backlog);
 
-        _logger.ConsoleLog($"Tcp server was started on {endpoint}");
+        _logger.Information($"Tcp server was started on {endpoint}");
 
         while (!cancellationToken.IsCancellationRequested)
         {
@@ -34,11 +34,11 @@ public class TcpServer
     {
         if (socket.RemoteEndPoint is not IPEndPoint endpoint)
         {
-            _logger.ConsoleLog("Unable to get remote endpoint");
+            _logger.Error("Unable to get remote endpoint");
             return;
         }
 
-        _logger.ConsoleLog($"Tcp client was conntected {endpoint}");
+        _logger.Information($"Tcp client was conntected {endpoint}");
         try
         {
             using var scope = _lifetimeScope.BeginLifetimeScope();
@@ -47,17 +47,17 @@ public class TcpServer
         }
         catch (SocketException exception) when (exception.SocketErrorCode == SocketError.ConnectionAborted)
         {
-            _logger.ConsoleLog("Connection aborted");
+            _logger.Error("Connection aborted");
         }
         catch (Exception e)
         {
-            _logger.ConsoleLog($"{e} Unhandled exception");
+            _logger.Error($"{e} Unhandled exception");
         }
         finally
         {
             socket.Dispose();
         }
 
-        _logger.ConsoleLog($"Tcp client was disconected");
+        _logger.Information($"Tcp client was disconected");
     }
 }
