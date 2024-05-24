@@ -1,3 +1,10 @@
-﻿
+﻿namespace ChatDummyClient;
 
-Console.WriteLine("ChatDummy Client Start");
+public class Program
+{
+
+    static void Main(string[] args)
+    {
+        
+    }
+}
