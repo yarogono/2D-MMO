@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using ChatServer.Configuration;
 
 namespace ChatServer;
 
@@ -15,5 +16,7 @@ public class Program
         Console.Title = "Chat Server";
 
         var builder = new ContainerBuilder();
+
+        var configuration = builder.RegisterModule<ConfigurationModule>();
     }
 }
