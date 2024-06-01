@@ -1,5 +1,7 @@
 ﻿using Autofac;
 using ChatServer.Configuration;
+using Logging;
+using Tcp;
 
 namespace ChatServer;
 
@@ -18,5 +20,7 @@ public class Program
         var builder = new ContainerBuilder();
 
         var configuration = builder.RegisterModule<ConfigurationModule>();
+        var logger = builder.RegisterModule<LoggingModule>();
+        var tcp = builder.RegisterModule<TcpModule>();
     }
 }
