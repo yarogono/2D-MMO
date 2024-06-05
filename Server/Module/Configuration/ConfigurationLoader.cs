@@ -2,7 +2,7 @@
 
 namespace ChatServer.Configuration;
 
-internal class ConfigurationLoader
+public class ConfigurationLoader
 {
     private const string ConfigurationFileFullPathName = "../../../../Module/Configuration/configuration.json";
 

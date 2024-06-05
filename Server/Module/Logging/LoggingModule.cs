@@ -1,8 +1,9 @@
 ﻿using Autofac;
+using ChatServer.Configuration;
 
-namespace ChatServer.Configuration;
+namespace Logging;
 
-public class ConfigurationModule : Module
+public class LoggingModule : Module
 {
     protected override void Load(ContainerBuilder builder)
     {
