@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Server", "Server\Server.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Configuration", "Configuration\Configuration.csproj", "{55ED7120-732E-4CA7-AABD-F9D3900BF26B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tcp", "Tcp\Tcp.csproj", "{F3335842-3356-4671-9FF7-DA9C8E260E66}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tcp", "Tcp\Tcp.csproj", "{F3335842-3356-4671-9FF7-DA9C8E260E66}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Logging", "Logging\Logging.csproj", "{BA31D881-9649-4A0C-8D86-055CB5351B6F}"
 EndProject
