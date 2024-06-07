@@ -61,20 +61,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Spine Examples\Scripts\AttackSpineboy.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\Mix and Match Character Customize\EquipsVisualsComponentExample.cs" />
     <Compile Include="Assets\Spine Examples\Scripts\Sample Components\SkeletonRenderTexture\SkeletonRenderTextureFadeout.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\Getting Started Scripts\SpineboyBeginnerModel.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\Sample Components\SlotTintBlackFollower.cs" />
     <Compile Include="Assets\Spine Examples\Scripts\MaterialPropertyBlockExample.cs" />
     <Compile Include="Assets\Spine Examples\Scripts\HurtFlashEffect.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\Sample Components\SkeletonUtility Modules\SkeletonRagdoll.cs" />
     <Compile Include="Assets\Spine Examples\Scripts\DraggableTransform.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\Sample Components\SkeletonRenderTexture\SkeletonRenderTexture.cs" />
     <Compile Include="Assets\Spine Examples\Scripts\RaggedySpineboy.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\SpineGauge.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\Sample Components\Ghost\SkeletonGhostRenderer.cs" />
     <Compile Include="Assets\Spine Examples\Scripts\SpineboyFreeze.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\Mix and Match Character Customize\EquipAssetExample.cs" />
+    <Compile Include="Assets\Spine Examples\Scripts\SpineGauge.cs" />
     <Compile Include="Assets\Spine Examples\Scripts\Spineboy.cs" />
     <Compile Include="Assets\Spine Examples\Scripts\Getting Started Scripts\SpineboyTargetControllerGraphic.cs" />
     <Compile Include="Assets\Spine Examples\Scripts\Goblins.cs" />
@@ -82,20 +75,39 @@
     <Compile Include="Assets\Spine Examples\Scripts\Sample Components\SkeletonUtility Modules\SkeletonUtilityGroundConstraint.cs" />
     <Compile Include="Assets\Spine Examples\Scripts\MixAndMatch.cs" />
     <Compile Include="Assets\Spine Examples\Scripts\Mecanim as Logic\DummyMecanimControllerExample.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\ReloadSceneOnKeyDown.cs" />
     <Compile Include="Assets\Spine Examples\Scripts\Sample Components\SkeletonGraphicMirror.cs" />
     <Compile Include="Assets\Spine Examples\Scripts\Getting Started Scripts\BasicPlatformerController.cs" />
+    <Compile Include="Assets\Spine Examples\Scripts\Sample Components\Sample VertexEffects\JitterEffectExample.cs" />
+    <Compile Include="Assets\Spine Examples\Scripts\Sample Components\SkeletonGraphicPlayAnimationAtEvent.cs" />
+    <Compile Include="Assets\Spine Examples\Scripts\Rotator.cs" />
+    <Compile Include="Assets\Spine Examples\Scripts\Mix and Match Character Customize\EquipSystemExample.cs" />
+    <Compile Include="Assets\Spine Examples\Scripts\MaterialReplacementExample.cs" />
+    <Compile Include="Assets\Spine Examples\Scripts\Sample Components\RenderCombinedMesh.cs" />
+    <Compile Include="Assets\Spine Examples\Scripts\Sample Components\SkeletonColorInitialize.cs" />
+    <Compile Include="Assets\Spine Examples\Scripts\Sample Components\SkeletonAnimationFixedTimestep.cs" />
+    <Compile Include="Assets\Spine Examples\Scripts\Sample Components\RootMotionDeltaCompensation.cs" />
+    <Compile Include="Assets\Spine Examples\Scripts\FootSoldierExample.cs" />
+    <Compile Include="Assets\Spine Examples\Scripts\Sample Components\Legacy\AtlasRegionAttacher.cs" />
+    <Compile Include="Assets\Spine Examples\Scripts\Mecanim as Logic\MecanimToAnimationHandleExample.cs" />
+    <Compile Include="Assets\Spine Examples\Scripts\Getting Started Scripts\SpineBeginnerTwo.cs" />
+    <Compile Include="Assets\Spine Examples\Scripts\SpineboyPole.cs" />
+    <Compile Include="Assets\Spine Examples\Scripts\Sample Components\SkeletonAnimationMulti\SkeletonAnimationMulti.cs" />
+    <Compile Include="Assets\Spine Examples\Scripts\Mix and Match Character Customize\EquipButtonExample.cs" />
+    <Compile Include="Assets\Spine Examples\Scripts\Mix and Match Character Customize\EquipsVisualsComponentExample.cs" />
+    <Compile Include="Assets\Spine Examples\Scripts\Getting Started Scripts\SpineboyBeginnerModel.cs" />
+    <Compile Include="Assets\Spine Examples\Scripts\Sample Components\SlotTintBlackFollower.cs" />
+    <Compile Include="Assets\Spine Examples\Scripts\Sample Components\SkeletonUtility Modules\SkeletonRagdoll.cs" />
+    <Compile Include="Assets\Spine Examples\Scripts\Sample Components\SkeletonRenderTexture\SkeletonRenderTexture.cs" />
+    <Compile Include="Assets\Spine Examples\Scripts\Sample Components\Ghost\SkeletonGhostRenderer.cs" />
+    <Compile Include="Assets\Spine Examples\Scripts\Mix and Match Character Customize\EquipAssetExample.cs" />
+    <Compile Include="Assets\Spine Examples\Scripts\ReloadSceneOnKeyDown.cs" />
     <Compile Include="Assets\Spine Examples\Scripts\Getting Started Scripts\ConstrainedCamera.cs" />
     <Compile Include="Assets\Spine Examples\Scripts\Sample Components\SpineEventUnityHandler.cs" />
     <Compile Include="Assets\Spine Examples\Scripts\MixAndMatchGraphic.cs" />
     <Compile Include="Assets\Spine Examples\Scripts\Sample Components\Legacy\SpriteAttacher.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\Sample Components\Sample VertexEffects\JitterEffectExample.cs" />
     <Compile Include="Assets\Spine Examples\Scripts\RenderTextureFadeoutExample.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\Sample Components\SkeletonGraphicPlayAnimationAtEvent.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\Rotator.cs" />
     <Compile Include="Assets\Spine Examples\Scripts\HeroEffectsHandlerExample.cs" />
     <Compile Include="Assets\Spine Examples\Scripts\Mix and Match Character Customize\MixAndMatchSkinsExample.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\Mix and Match Character Customize\EquipSystemExample.cs" />
     <Compile Include="Assets\Spine Examples\Scripts\Getting Started Scripts\SpineBlinkPlayer.cs" />
     <Compile Include="Assets\Spine Examples\Scripts\Sample Components\SkeletonUtility Modules\SkeletonUtilityKinematicShadow.cs" />
     <Compile Include="Assets\Spine Examples\Scripts\Getting Started Scripts\SpineboyBeginnerInput.cs" />
@@ -104,40 +116,28 @@
     <Compile Include="Assets\Spine Examples\Scripts\Sample Components\RenderExistingMesh.cs" />
     <Compile Include="Assets\Spine Examples\Scripts\Getting Started Scripts\SpineboyTargetController.cs" />
     <Compile Include="Assets\Spine Examples\Scripts\RuntimeLoadFromExportsExample.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\MaterialReplacementExample.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\Sample Components\RenderCombinedMesh.cs" />
     <Compile Include="Assets\Spine Examples\Scripts\Mix and Match Character Customize\MixAndMatchSkinsButtonExample.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\Sample Components\SkeletonColorInitialize.cs" />
     <Compile Include="Assets\Spine Examples\Scripts\SpineboyBodyTilt.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\Sample Components\SkeletonAnimationFixedTimestep.cs" />
     <Compile Include="Assets\Spine Examples\Scripts\Sample Components\Sample VertexEffects\TwoByTwoTransformEffectExample.cs" />
     <Compile Include="Assets\Spine Examples\Scripts\Sample Components\CombinedSkin.cs" />
     <Compile Include="Assets\Spine Examples\Scripts\Getting Started Scripts\SpineboyBeginnerView.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\Sample Components\RootMotionDeltaCompensation.cs" />
     <Compile Include="Assets\Spine Examples\Scripts\Getting Started Scripts\TransitionDictionaryExample.cs" />
     <Compile Include="Assets\Spine Examples\Scripts\Sample Components\SkeletonUtility Modules\SkeletonRagdoll2D.cs" />
     <Compile Include="Assets\Spine Examples\Scripts\Getting Started Scripts\SpineboyBeginnerViewGraphic.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\FootSoldierExample.cs" />
     <Compile Include="Assets\Spine Examples\Scripts\SpawnSkeletonGraphicExample.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\Sample Components\Legacy\AtlasRegionAttacher.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\HandleEventWithAudioExample.cs" />
     <Compile Include="Assets\Spine Examples\Scripts\Sample Components\OutlineSkeletonGraphic.cs" />
+    <Compile Include="Assets\Spine Examples\Scripts\HandleEventWithAudioExample.cs" />
     <Compile Include="Assets\Spine Examples\Scripts\SpineboyFootplanter.cs" />
     <Compile Include="Assets\Spine Examples\Scripts\Sample Components\SkeletonUtility Modules\SkeletonUtilityEyeConstraint.cs" />
     <Compile Include="Assets\Spine Examples\Scripts\MecanimAnimationMatchModifier\AnimationMatchModifierAsset.cs" />
     <Compile Include="Assets\Spine Examples\Scripts\SpawnFromSkeletonDataExample.cs" />
     <Compile Include="Assets\Spine Examples\Scripts\Sample Components\BoneLocalOverride.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\Mecanim as Logic\MecanimToAnimationHandleExample.cs" />
     <Compile Include="Assets\Spine Examples\Scripts\Sample Components\Ghost\SkeletonGhost.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\Sample Components\SkeletonRenderTexture\SkeletonGraphicRenderTexture.cs" />
     <Compile Include="Assets\Spine Examples\Other Examples\Animation Tester\SpineAnimationTesterTool.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\Getting Started Scripts\SpineBeginnerTwo.cs" />
+    <Compile Include="Assets\Spine Examples\Scripts\Sample Components\SkeletonRenderTexture\SkeletonGraphicRenderTexture.cs" />
     <Compile Include="Assets\Spine Examples\Scripts\Mecanim as Logic\SkeletonAnimationHandleExample.cs" />
     <Compile Include="Assets\Spine Examples\Scripts\SpineboyPoleGraphic.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\SpineboyPole.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\Sample Components\SkeletonAnimationMulti\SkeletonAnimationMulti.cs" />
     <Compile Include="Assets\Spine Examples\Scripts\Sample Components\SetRigidbodySolverIterations.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\Mix and Match Character Customize\EquipButtonExample.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Spine Examples\Spine Skeletons\Dragon\dragon.atlas.txt" />
@@ -999,6 +999,14 @@
     </Reference>
     <Reference Include="System.Xml.Serialization">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.31f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.UI">
+      <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
