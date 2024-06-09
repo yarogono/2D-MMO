@@ -1,4 +1,3 @@
-using System.Resources;
 using UnityEngine;
 
 public class Managers : MonoBehaviour
@@ -7,6 +6,9 @@ public class Managers : MonoBehaviour
     private static Managers Instance { get { Init(); return s_instance; } }
 
     #region Contents
+    #endregion
+
+    #region Core
     private GameManager _game = new GameManager();
     private DataManager _data = new DataManager();
     private ResourceManager _resource = new ResourceManager();
@@ -14,9 +16,6 @@ public class Managers : MonoBehaviour
     private UIManager _ui = new UIManager();
     private WebManager _web = new WebManager();
     private SoundManager _sound = new SoundManager();
-    #endregion
-
-    #region Core
     #endregion
 
     public static GameManager Game { get { return Instance._game; } }
@@ -51,7 +50,8 @@ public class Managers : MonoBehaviour
 
     public static void Clear()
     {
-
+        UI.Clear();
+        Sound.Clear();
     }
 
 }
