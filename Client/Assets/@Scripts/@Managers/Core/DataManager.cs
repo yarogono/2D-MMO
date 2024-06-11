@@ -8,10 +8,11 @@ public class DataManager
         Dictionary<Key, Value> MakeDict();
     }
 
+    //public Dictionary<int, Data.Skill> SkillDict { get; private set; } = new Dictionary<int, Data.Skill>();
 
     public void Init()
     {
-
+        //SkillDict = LoadJson<Data.SkillData, int, Data.Skill>("SkillData").MakeDict();
     }
 
     private Loader LoadJson<Loader, Key, Value>(string path) where Loader : ILoader<Key, Value>
