@@ -16,6 +16,7 @@ public class Managers : MonoBehaviour
     private UIManager _ui = new UIManager();
     private WebManager _web = new WebManager();
     private SoundManager _sound = new SoundManager();
+    private PoolManager _pool = new PoolManager();
     #endregion
 
     public static GameManager Game { get { return Instance._game; } }
@@ -25,6 +26,7 @@ public class Managers : MonoBehaviour
     public static UIManager UI { get { return Instance._ui; } }
     public static WebManager Web { get { return Instance._web; } }
     public static SoundManager Sound { get { return Instance._sound; } }
+    public static PoolManager Pool { get { return Instance._pool; } }
 
     void Start()
     {
