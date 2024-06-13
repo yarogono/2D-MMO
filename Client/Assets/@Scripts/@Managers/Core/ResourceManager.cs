@@ -7,6 +7,7 @@ public class ResourceManager
         return Resources.Load<T>(path);
     }
 
+    #region Load Resource
     public GameObject Instantiate(string path, Transform parent = null)
     {
         GameObject original = Load<GameObject>(path);
@@ -22,6 +23,11 @@ public class ResourceManager
 
         return gameObject;
     }
+    #endregion
+
+    #region Addresable
+
+    #endregion
 
     public void Destroy(GameObject go)
     {

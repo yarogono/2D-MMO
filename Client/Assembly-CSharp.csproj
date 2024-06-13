@@ -63,12 +63,12 @@
     <Compile Include="Assets\@Scripts\@Managers\Core\SoundManager.cs" />
     <Compile Include="Assets\@Scripts\@Managers\Core\ResourceManager.cs" />
     <Compile Include="Assets\@Scripts\@Managers\Core\DataManager.cs" />
+    <Compile Include="Assets\@Scripts\@Managers\Core\GameManager.cs" />
+    <Compile Include="Assets\@Scripts\@Managers\Core\UIManager.cs" />
     <Compile Include="Assets\@Scripts\@Managers\Core\WebManager.cs" />
     <Compile Include="Assets\@Scripts\@Managers\Core\PoolManager.cs" />
     <Compile Include="Assets\@Scripts\@Managers\Managers.cs" />
-    <Compile Include="Assets\@Scripts\@Managers\Core\GameManager.cs" />
     <Compile Include="Assets\@Scripts\@Managers\Core\SceneManagerEx.cs" />
-    <Compile Include="Assets\@Scripts\@Managers\Core\UIManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Spine\version.txt" />
@@ -894,6 +894,18 @@
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.31f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.Addressables.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Addressables.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.ResourceManager">
+      <HintPath>Library\ScriptAssemblies\Unity.ResourceManager.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.ScriptableBuildPipeline">
+      <HintPath>Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
       <Private>False</Private>
@@ -904,6 +916,14 @@
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.ScriptableBuildPipeline.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Addressables">
+      <HintPath>Library\ScriptAssemblies\Unity.Addressables.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
