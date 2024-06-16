@@ -1,10 +1,22 @@
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
+
 
 public class ResourceManager
 {
-    public T Load<T>(string path) where T : Object
+    private Dictionary<string, UnityEngine.Object> _resources = new Dictionary<string, UnityEngine.Object>();
+    private Dictionary<string, AsyncOperationHandle> _handles = new Dictionary<string, AsyncOperationHandle>();
+
+    public T Load<T>(string key) where T : Object
     {
-        return Resources.Load<T>(path);
+        if (_resources.TryGetValue(key, out Object resource))
+        {
+            return resource as T;
+        }
+
+        return null;
     }
 
     #region Load Resource
