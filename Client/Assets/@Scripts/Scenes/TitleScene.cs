@@ -2,9 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TitleScene : MonoBehaviour
+public class TitleScene : BaseScene
 {
-    void Start()
+    public override bool Init()
+    {
+        if (base.Init() == false)
+        {
+            return false;
+        }
+
+        SceneType = Define.EScene.TitleScene;
+
+        StartLoadAssets();
+
+        return true;
+    }
+
+    void StartLoadAssets()
     {
         Managers.Resource.LoadAsync<Object>("PreLoad", (key, count, totalCount) =>
         {
