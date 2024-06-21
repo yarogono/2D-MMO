@@ -80,6 +80,7 @@
     <Compile Include="Assets\@Scripts\UI\UI_Base.cs" />
     <Compile Include="Assets\@Scripts\UI\Scene\UI_TitleScene.cs" />
     <Compile Include="Assets\@Scripts\Scenes\BaseScene.cs" />
+    <Compile Include="Assets\@Scripts\UI\Popup\UI_Popup.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Spine\version.txt" />
