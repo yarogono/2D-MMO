@@ -20,7 +20,7 @@ public class TitleScene : BaseScene
 
     void StartLoadAssets()
     {
-        Managers.Resource.LoadAsync<Object>("PreLoad", (key, count, totalCount) =>
+        Managers.Resource.LoadAllAsync<Object>("PreLoad", (key, count, totalCount) =>
         {
             Debug.Log($"{key} {count}/{totalCount}");
 

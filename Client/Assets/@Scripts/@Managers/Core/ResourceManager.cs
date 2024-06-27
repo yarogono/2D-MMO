@@ -70,9 +70,7 @@ public class ResourceManager
 
         string loadKey = key;
         if (key.Contains(".sprite"))
-        {
             loadKey = $"{key}[{key.Replace(".sprite", "")}]";
-        }
 
         var asyncOperation = Addressables.LoadAssetAsync<T>(loadKey);
         asyncOperation.Completed += (op) =>
@@ -83,9 +81,9 @@ public class ResourceManager
         };
     }
 
-    public void LoadAsync<T>(string lable, Action<string, int, int> callback) where T : UnityEngine.Object
+    public void LoadAllAsync<T>(string label, Action<string, int, int> callback) where T : UnityEngine.Object
     {
-        var opHandle = Addressables.LoadResourceLocationsAsync(lable, typeof(T));
+        var opHandle = Addressables.LoadResourceLocationsAsync(label, typeof(T));
         opHandle.Completed += (op) =>
         {
             int loadCount = 0;
@@ -106,7 +104,7 @@ public class ResourceManager
                     LoadAsync<T>(result.PrimaryKey, (obj) =>
                     {
                         loadCount++;
-                        callback.Invoke(result.PrimaryKey, loadCount, totalCount);
+                        callback?.Invoke(result.PrimaryKey, loadCount, totalCount);
                     });
                 }
             }
