@@ -12,6 +12,13 @@ public static class Define
         Click,
         PointerDown,
         PointerUp,
-        Drag
+        Drag,
+    }
+
+    public enum ESound
+    {
+        Bgm,
+        Effect,
+        Max,
     }
 }

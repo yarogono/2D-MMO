@@ -14,8 +14,8 @@ internal class Pool
         {
             if (_root == null)
             {
-                GameObject gameObject = new GameObject() { name = $"@{_prefab.name}Pool" };
-                _root = gameObject.transform;
+                GameObject go = new GameObject() { name = $"@{_prefab.name}Pool" };
+                _root = go.transform;
             }
 
             return _root;
@@ -28,9 +28,10 @@ internal class Pool
         _pool = new ObjectPool<GameObject>(OnCreate, OnGet, OnRelease, OnDestroy);
     }
 
-    public void Push(GameObject gameObject)
+    public void Push(GameObject go)
     {
-
+        if (go.activeSelf)
+            _pool.Release(go);
     }
 
     public GameObject Pop()
@@ -41,25 +42,25 @@ internal class Pool
     #region Funcs
     private GameObject OnCreate()
     {
-        GameObject gameObject = GameObject.Instantiate(_prefab);
-        gameObject.transform.SetParent(Root);
-        gameObject.name = _prefab.name;
-        return gameObject;
+        GameObject go = GameObject.Instantiate(_prefab);
+        go.transform.SetParent(Root);
+        go.name = _prefab.name;
+        return go;
     }
 
-    private void OnGet(GameObject gameObject)
+    private void OnGet(GameObject go)
     {
-        gameObject.SetActive(true);
+        go.SetActive(true);
     }
 
-    private void OnRelease(GameObject gameObject)
+    private void OnRelease(GameObject go)
     {
-        gameObject.SetActive(false);
+        go.SetActive(false);
     }
 
-    private void OnDestroy(GameObject gameObject)
+    private void OnDestroy(GameObject go)
     {
-        GameObject.Destroy(gameObject);
+        GameObject.Destroy(go);
     }
     #endregion
 }
@@ -76,14 +77,12 @@ public class PoolManager
         return _pools[prefab.name].Pop();
     }
 
-    public bool Push(GameObject gameObject)
+    public bool Push(GameObject go)
     {
-        if (_pools.ContainsKey(gameObject.name) == false)
-        {
+        if (_pools.ContainsKey(go.name) == false)
             return false;
-        }
 
-        _pools[gameObject.name].Push(gameObject);
+        _pools[go.name].Push(go);
         return true;
     }
 
@@ -97,5 +96,4 @@ public class PoolManager
         Pool pool = new Pool(original);
         _pools.Add(original.name, pool);
     }
-
 }

@@ -1,23 +1,24 @@
+using Newtonsoft.Json;
 using System.Collections.Generic;
 using UnityEngine;
 
+public interface ILoader<Key, Value>
+{
+    Dictionary<Key, Value> MakeDict();
+}
+
 public class DataManager
 {
-    public interface ILoader<Key, Value>
-    {
-        Dictionary<Key, Value> MakeDict();
-    }
-
-    //public Dictionary<int, Data.Skill> SkillDict { get; private set; } = new Dictionary<int, Data.Skill>();
+    public Dictionary<int, Data.TestData> TestDic { get; private set; } = new Dictionary<int, Data.TestData>();
 
     public void Init()
     {
-        //SkillDict = LoadJson<Data.SkillData, int, Data.Skill>("SkillData").MakeDict();
+        TestDic = LoadJson<Data.TestDataLoader, int, Data.TestData>("TestData").MakeDict();
     }
 
     private Loader LoadJson<Loader, Key, Value>(string path) where Loader : ILoader<Key, Value>
     {
-        TextAsset textAsset = Managers.Resource.Load<TextAsset>($"Data/{path}");
-        return JsonUtility.FromJson<Loader>(textAsset.text);
+        TextAsset textAsset = Managers.Resource.Load<TextAsset>(path);
+        return JsonConvert.DeserializeObject<Loader>(textAsset.text);
     }
 }

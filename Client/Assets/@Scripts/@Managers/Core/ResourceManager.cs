@@ -4,61 +4,51 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 
-
 public class ResourceManager
 {
     private Dictionary<string, UnityEngine.Object> _resources = new Dictionary<string, UnityEngine.Object>();
     private Dictionary<string, AsyncOperationHandle> _handles = new Dictionary<string, AsyncOperationHandle>();
 
+    #region Load Resource
     public T Load<T>(string key) where T : UnityEngine.Object
     {
         if (_resources.TryGetValue(key, out UnityEngine.Object resource))
-        {
             return resource as T;
-        }
 
         return null;
     }
 
-    #region Load Resource
     public GameObject Instantiate(string key, Transform parent = null, bool pooling = false)
     {
         GameObject prefab = Load<GameObject>(key);
-
         if (prefab == null)
         {
-            Debug.Log($"Failed to load prefab : {key}");
+            Debug.LogError($"Failed to load prefab : {key}");
             return null;
         }
 
         if (pooling)
-        {
             return Managers.Pool.Pop(prefab);
-        }
 
-        GameObject gameObject = UnityEngine.Object.Instantiate(prefab, parent);
-        gameObject.name = gameObject.name;
+        GameObject go = UnityEngine.Object.Instantiate(prefab, parent);
+        go.name = prefab.name;
 
-        return gameObject;
+        return go;
     }
 
     public void Destroy(GameObject go)
     {
         if (go == null)
-        {
             return;
-        }
 
         if (Managers.Pool.Push(go))
-        {
             return;
-        }
 
-        GameObject.Destroy(go);
+        UnityEngine.Object.Destroy(go);
     }
     #endregion
 
-    #region Addresable
+    #region Addressable
     private void LoadAsync<T>(string key, Action<T> callback = null) where T : UnityEngine.Object
     {
         // Cache
@@ -116,12 +106,9 @@ public class ResourceManager
         _resources.Clear();
 
         foreach (var handle in _handles)
-        {
             Addressables.Release(handle);
-        }
 
         _handles.Clear();
     }
     #endregion
-
 }
