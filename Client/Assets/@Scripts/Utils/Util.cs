@@ -54,6 +54,7 @@ public static class Util
         }
         else
         {
+            // 현재 GameObject와 모든 자손 객체에서 타입 T의 컴포넌트를 가져옵니다.
             foreach (T component in go.transform.GetComponents<T>())
             {
                 if (string.IsNullOrEmpty(name) || component.name == name)
