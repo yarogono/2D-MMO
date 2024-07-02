@@ -1,13 +1,11 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
 
 namespace Data
 {
-	#region TestData
-	[Serializable]
+    #region TestData
+    [Serializable]
 	public class TestData
 	{
 		public int Level;
