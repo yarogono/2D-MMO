@@ -4,13 +4,19 @@ using UnityEngine;
 
 public class GameScene : BaseScene
 {
-    void Start()
+    public override bool Init()
     {
-        
-    }
+        if (base.Init() == false)
+        {
+            return false;
+        }
 
-    void Update()
-    {
-        
+        SceneType = Define.EScene.GameScene;
+
+        GameObject map = Managers.Resource.Instantiate("BaseMap");
+        map.transform.position = Vector3.zero;
+        map.name = "@BaseMap";
+
+        return true;
     }
 }
