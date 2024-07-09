@@ -17,4 +17,8 @@ public class GameScene : BaseScene
 
         return true;
     }
+
+    public override void Clear()
+    {
+    }
 }

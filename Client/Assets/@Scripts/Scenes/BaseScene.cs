@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using static Define;
 
-public class BaseScene : InitBase
+public abstract class BaseScene : InitBase
 {
     public EScene SceneType { get; protected set; } = EScene.Unknown;
 
@@ -23,4 +23,6 @@ public class BaseScene : InitBase
 
         return true;
     }
+
+    public abstract void Clear();
 }
