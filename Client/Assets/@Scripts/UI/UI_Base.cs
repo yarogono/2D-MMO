@@ -5,18 +5,18 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// UI Å¬·¡½º¿¡¼­ »ç¿ëÇÒ Base ÇÔ¼öµéÀ» ¸ğ¾Æ³õÀº Å¬·¡½º
+// UI í´ë˜ìŠ¤ì—ì„œ ì‚¬ìš©í•  Base í•¨ìˆ˜ë“¤ì„ ëª¨ì•„ë†“ì€ í´ë˜ìŠ¤
 public class UI_Base : InitBase
 {
     protected Dictionary<Type, UnityEngine.Object[]> _objects = new Dictionary<Type, UnityEngine.Object[]>();
 
-    // À¯´ÏÆ¼ ¿£ÁøÀÇ ½ÇÇà ¼ø¼­ Áß Awake¿¡¼­ Init ÃÊ±âÈ­ ÇÔ¼ö¸¦ È£ÃâÇÏµµ·Ï ÇÕ´Ï´Ù.
+    // ìœ ë‹ˆí‹° ì—”ì§„ì˜ ì‹¤í–‰ ìˆœì„œ ì¤‘ Awakeì—ì„œ Init ì´ˆê¸°í™” í•¨ìˆ˜ë¥¼ í˜¸ì¶œí•˜ë„ë¡ í•©ë‹ˆë‹¤.
     public void Awake()
     {
         Init();
     }
 
-    // UI °´Ã¼¿Í ¸ÊÇÎÇØ¼­ Bind ÇÏ´Â ÇÔ¼öÀÔ´Ï´Ù.
+    // UI ê°ì²´ì™€ ë§µí•‘í•´ì„œ Bind í•˜ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤.
     public void Bind<T>(Type type) where T : UnityEngine.Object
     {
         string[] names = Enum.GetNames(type);
@@ -41,14 +41,14 @@ public class UI_Base : InitBase
         }
     }
 
-    // UI¿¡ ÀÖ´Â ´Ù¾çÇÑ Å¸ÀÔµéÀ» Bind ÇÏµµ·Ï ÇÏ´Â ÇÔ¼öÀÔ´Ï´Ù.
+    // UIì— ìˆëŠ” ë‹¤ì–‘í•œ íƒ€ì…ë“¤ì„ Bind í•˜ë„ë¡ í•˜ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤.
     protected void BindObjects(Type type) { Bind<GameObject>(type); }
     protected void BindImages(Type type) { Bind<Image>(type); }
     protected void BindTexts(Type type) { Bind<TMP_Text>(type); }
     protected void BindButtons(Type type) { Bind<Button>(type); }
     protected void BindToggles(Type type) { Bind<Toggle>(type); }
 
-    // Enum °ªÀ» int·Î º¯°æÇØ¼­ BindµÈ UI Å¬·¡½º¸¦ °¡Á®¿À´Â(Get)ÇÏ´Â ÇÔ¼öÀÔ´Ï´Ù.
+    // Enum ê°’ì„ intë¡œ ë³€ê²½í•´ì„œ Bindëœ UI í´ë˜ìŠ¤ë¥¼ ê°€ì ¸ì˜¤ëŠ”(Get)í•˜ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤.
     protected T Get<T>(int idx) where T : UnityEngine.Object
     {
         UnityEngine.Object[] objects = null;
@@ -60,14 +60,14 @@ public class UI_Base : InitBase
         return objects[idx] as T;
     }
 
-    // °¢ UI¿¡ ¸Â´Â Å¸ÀÔµéÀÇ °¡Á®¿À´Â(Get) ÇÏ´Â ÇÔ¼öÀÔ´Ï´Ù.
+    // ê° UIì— ë§ëŠ” íƒ€ì…ë“¤ì˜ ê°€ì ¸ì˜¤ëŠ”(Get) í•˜ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤.
     protected GameObject GetObject(int idx) { return Get<GameObject>(idx); }
     protected TMP_Text GetText(int idx) { return Get<TMP_Text>(idx); }
     protected Button GetButton(int idx) { return Get<Button>(idx); }
     protected Image GetImage(int idx) { return Get<Image>(idx); }
     protected Toggle GetToggle(int idx) { return Get<Toggle>(idx); }
 
-    // UI Å¸ÀÔµé¿¡ Event¸¦ BindÇÏ´Â ÇÔ¼öÀÔ´Ï´Ù.
+    // UI íƒ€ì…ë“¤ì— Eventë¥¼ Bindí•˜ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤.
     public static void BindEvent(GameObject go, Action<PointerEventData> action = null, Define.EUIEvent type = Define.EUIEvent.Click)
     {
         UI_EventHandler evt = Util.GetOrAddComponent<UI_EventHandler>(go);
