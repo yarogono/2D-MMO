@@ -17,7 +17,7 @@ public class UI_Base : InitBase
     }
 
     // UI 객체와 맵핑해서 Bind 하는 함수입니다.
-    public void Bind<T>(Type type) where T : UnityEngine.Object
+    protected void Bind<T>(Type type) where T : UnityEngine.Object
     {
         string[] names = Enum.GetNames(type);
         UnityEngine.Object[] objects = new UnityEngine.Object[names.Length];
@@ -26,18 +26,12 @@ public class UI_Base : InitBase
         for (int i = 0; i < names.Length; i++)
         {
             if (typeof(T) == typeof(GameObject))
-            {
                 objects[i] = Util.FindChild(gameObject, names[i], true);
-            }
             else
-            {
                 objects[i] = Util.FindChild<T>(gameObject, names[i], true);
-            }
 
             if (objects[i] == null)
-            {
-                Debug.Log($"Failed to bind ({names[i]})");
-            }
+                Debug.Log($"Failed to bind({names[i]})");
         }
     }
 
