@@ -9,16 +9,14 @@ public abstract class BaseScene : InitBase
     public override bool Init()
     {
         if (base.Init() == false)
-        {
             return false;
-        }
 
         Object obj = GameObject.FindObjectOfType(typeof(EventSystem));
         if (obj == null)
         {
-            GameObject gameObject = new GameObject { name = "@EventSystem" };
-            gameObject.AddComponent<EventSystem>();
-            gameObject.AddComponent<StandaloneInputModule>();
+            GameObject go = new GameObject() { name = "@EventSystem" };
+            go.AddComponent<EventSystem>();
+            go.AddComponent<StandaloneInputModule>();
         }
 
         return true;

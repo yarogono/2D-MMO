@@ -11,7 +11,7 @@ public class UI_Base : InitBase
     protected Dictionary<Type, UnityEngine.Object[]> _objects = new Dictionary<Type, UnityEngine.Object[]>();
 
     // 유니티 엔진의 실행 순서 중 Awake에서 Init 초기화 함수를 호출하도록 합니다.
-    public void Awake()
+    void Awake()
     {
         Init();
     }

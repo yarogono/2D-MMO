@@ -8,15 +8,13 @@ public class InitBase : MonoBehaviour
     public virtual bool Init()
     {
         if (_init)
-        {
             return false;
-        }
 
         _init = true;
         return true;
     }
 
-    private void Awake()
+    void Awake()
     {
         Init();
     }
