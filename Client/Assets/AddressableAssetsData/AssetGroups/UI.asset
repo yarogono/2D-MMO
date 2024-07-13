@@ -10,25 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Built In Data
+  m_Name: UI
   m_EditorClassIdentifier: 
-  m_GroupName: Built In Data
+  m_GroupName: UI
   m_Data:
     m_SerializedData: []
-  m_GUID: 78d2347f0b3fa5648b86c32f54f7293f
+  m_GUID: d4ba17e45d70dfe4ca21eb28fc54fe52
   m_SerializeEntries:
-  - m_GUID: Resources
-    m_Address: Resources
-    m_ReadOnly: 1
-    m_SerializedLabels: []
+  - m_GUID: 6993d74d570d9104bb2aadf5b77134eb
+    m_Address: UI_TitleScene
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: EditorSceneList
-    m_Address: EditorSceneList
-    m_ReadOnly: 1
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  m_ReadOnly: 1
-  m_Settings: {fileID: 11400000, guid: 4252986e79486f04d8150b2bad1e8d61, type: 2}
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 9002df68884c063409d1551b8e753b89, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: 36d6c1afd2fde144ca5b78600a414fde, type: 2}
+    - {fileID: 11400000, guid: 73c41c9f2d583f34ca959a13d962291c, type: 2}
+    - {fileID: 11400000, guid: a3f309dbfa3a6224b844f112ec993784, type: 2}
