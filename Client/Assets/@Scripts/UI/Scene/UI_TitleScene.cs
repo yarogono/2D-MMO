@@ -30,7 +30,7 @@ public class UI_TitleScene : UI_Scene
         GetObject((int)GameObjects.StartImage).gameObject.SetActive(false);
         GetText((int)Texts.DisplayText).text = $"";
 
-        StartLoadAssets();
+        //StartLoadAssets();
 
         return true;
     }

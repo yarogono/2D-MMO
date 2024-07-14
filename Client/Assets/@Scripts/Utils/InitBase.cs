@@ -4,6 +4,10 @@ using UnityEngine;
 public class InitBase : MonoBehaviour
 {
     protected bool _init = false;
+    void Awake()
+    {
+        Init();
+    }
 
     public virtual bool Init()
     {
@@ -14,8 +18,4 @@ public class InitBase : MonoBehaviour
         return true;
     }
 
-    void Awake()
-    {
-        Init();
-    }
 }
