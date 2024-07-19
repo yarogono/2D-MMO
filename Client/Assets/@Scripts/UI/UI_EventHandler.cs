@@ -22,20 +22,20 @@ public class UI_EventHandler : MonoBehaviour, IPointerClickHandler, IPointerDown
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        OnClickHandler.Invoke(eventData);
+        OnClickHandler?.Invoke(eventData);
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        OnPointerDownHandler.Invoke(eventData);
+        OnPointerDownHandler?.Invoke(eventData);
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        OnPointerUpHandler.Invoke(eventData);
+        OnPointerUpHandler?.Invoke(eventData);
     }
     public void OnDrag(PointerEventData eventData)
     {
-        OnDragHandler.Invoke(eventData);
+        OnDragHandler?.Invoke(eventData);
     }
 }

@@ -25,7 +25,7 @@ public class UI_TitleScene : UI_Scene
         {
             Debug.Log("ChangeScene");
             Managers.Scene.LoadScene(EScene.GameScene);
-        });
+        }, EUIEvent.Click);
 
         GetObject((int)GameObjects.StartImage).gameObject.SetActive(false);
         GetText((int)Texts.DisplayText).text = $"";
