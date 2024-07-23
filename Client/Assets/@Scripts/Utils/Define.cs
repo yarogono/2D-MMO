@@ -49,3 +49,13 @@ public static class Define
         Dead,
     }
 }
+
+
+public static class AnimName
+{
+    public const string IDLE = "idle";
+    public const string ATTACK_A = "attack_a";
+    public const string ATTAK_B = "attack_b";
+    public const string MOVE = "move";
+    public const string DEAD = "dead";
+}
