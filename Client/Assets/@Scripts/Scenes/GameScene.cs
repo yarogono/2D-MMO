@@ -15,7 +15,7 @@ public class GameScene : BaseScene
         map.transform.position = Vector3.zero;
         map.name = "@BaseMap";
 
-        Managers.Resource.Instantiate("Hero");
+        Hero hero = Managers.Object.Spawn<Hero>(Vector3.zero);
 
         return true;
     }

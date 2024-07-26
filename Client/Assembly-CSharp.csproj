@@ -63,6 +63,7 @@
     <Compile Include="Assets\@Scripts\Scenes\TitleScene.cs" />
     <Compile Include="Assets\@Scripts\@Managers\Core\UIManager.cs" />
     <Compile Include="Assets\@Scripts\UI\Scene\UI_TitleScene.cs" />
+    <Compile Include="Assets\@Scripts\@Managers\Contents\GameManager.cs" />
     <Compile Include="Assets\@Scripts\UI\Popup\UI_Popup.cs" />
     <Compile Include="Assets\@Scripts\@Managers\Core\SoundManager.cs" />
     <Compile Include="Assets\@Scripts\@Managers\Core\DataManager.cs" />
@@ -74,11 +75,11 @@
     <Compile Include="Assets\@Scripts\@Managers\Core\SceneManagerEx.cs" />
     <Compile Include="Assets\@Scripts\UI\UI_Base.cs" />
     <Compile Include="Assets\@Scripts\@Managers\Core\ResourceManager.cs" />
-    <Compile Include="Assets\@Scripts\@Managers\Core\GameManager.cs" />
     <Compile Include="Assets\@Scripts\Utils\Extension.cs" />
     <Compile Include="Assets\@Scripts\Utils\Util.cs" />
     <Compile Include="Assets\@Scripts\@Managers\Core\PoolManager.cs" />
     <Compile Include="Assets\@Scripts\Controllers\BaseObject.cs" />
+    <Compile Include="Assets\@Scripts\@Managers\Contents\ObjectManager.cs" />
     <Compile Include="Assets\@Scripts\Scenes\BaseScene.cs" />
     <Compile Include="Assets\@Scripts\Utils\Define.cs" />
     <Compile Include="Assets\@Scripts\Controllers\Creature\Hero.cs" />
