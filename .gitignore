@@ -71,3 +71,6 @@ crashlytics-build.properties
 
 /.vsconfig
 /.gitattributes
+
+
+/bin
