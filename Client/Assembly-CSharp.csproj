@@ -60,34 +60,34 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.31f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\@Scripts\@Managers\Core\SoundManager.cs" />
-    <Compile Include="Assets\@Scripts\@Managers\Core\ResourceManager.cs" />
-    <Compile Include="Assets\@Scripts\@Managers\Core\DataManager.cs" />
-    <Compile Include="Assets\@Scripts\Utils\Define.cs" />
-    <Compile Include="Assets\@Scripts\Controllers\Creature\Hero.cs" />
     <Compile Include="Assets\@Scripts\Scenes\TitleScene.cs" />
-    <Compile Include="Assets\@Scripts\Data\Data.Contents.cs" />
-    <Compile Include="Assets\@Scripts\UI\Scene\UI_Scene.cs" />
     <Compile Include="Assets\@Scripts\@Managers\Core\UIManager.cs" />
+    <Compile Include="Assets\@Scripts\UI\Scene\UI_TitleScene.cs" />
+    <Compile Include="Assets\@Scripts\@Managers\Contents\GameManager.cs" />
+    <Compile Include="Assets\@Scripts\UI\Popup\UI_Popup.cs" />
+    <Compile Include="Assets\@Scripts\@Managers\Core\SoundManager.cs" />
+    <Compile Include="Assets\@Scripts\@Managers\Core\DataManager.cs" />
+    <Compile Include="Assets\@Scripts\UI\Scene\UI_Scene.cs" />
     <Compile Include="Assets\@Scripts\UI\UI_EventHandler.cs" />
     <Compile Include="Assets\@Scripts\Controllers\Creature\Creature.cs" />
     <Compile Include="Assets\@Scripts\Scenes\GameScene.cs" />
-    <Compile Include="Assets\@Scripts\Utils\Extension.cs" />
-    <Compile Include="Assets\@Scripts\Utils\Util.cs" />
-    <Compile Include="Assets\@Scripts\@Managers\Core\WebManager.cs" />
-    <Compile Include="Assets\@Scripts\@Managers\Core\PoolManager.cs" />
-    <Compile Include="Assets\@Scripts\@Managers\Managers.cs" />
     <Compile Include="Assets\@Scripts\Utils\InitBase.cs" />
     <Compile Include="Assets\@Scripts\@Managers\Core\SceneManagerEx.cs" />
-    <Compile Include="Assets\@Scripts\Controllers\CameraController.cs" />
+    <Compile Include="Assets\@Scripts\UI\UI_Base.cs" />
+    <Compile Include="Assets\@Scripts\@Managers\Core\ResourceManager.cs" />
+    <Compile Include="Assets\@Scripts\Utils\Extension.cs" />
+    <Compile Include="Assets\@Scripts\Utils\Util.cs" />
+    <Compile Include="Assets\@Scripts\@Managers\Core\PoolManager.cs" />
     <Compile Include="Assets\@Scripts\Controllers\BaseObject.cs" />
     <Compile Include="Assets\@Scripts\@Managers\Contents\ObjectManager.cs" />
-    <Compile Include="Assets\@Scripts\UI\UI_Base.cs" />
-    <Compile Include="Assets\@Scripts\UI\Scene\UI_TitleScene.cs" />
-    <Compile Include="Assets\@Scripts\@Managers\Contents\GameManager.cs" />
     <Compile Include="Assets\@Scripts\Scenes\BaseScene.cs" />
+    <Compile Include="Assets\@Scripts\Utils\Define.cs" />
+    <Compile Include="Assets\@Scripts\Controllers\Creature\Hero.cs" />
+    <Compile Include="Assets\@Scripts\Data\Data.Contents.cs" />
+    <Compile Include="Assets\@Scripts\@Managers\Core\WebManager.cs" />
+    <Compile Include="Assets\@Scripts\@Managers\Managers.cs" />
+    <Compile Include="Assets\@Scripts\Controllers\CameraController.cs" />
     <Compile Include="Assets\@Scripts\Controllers\Creature\Monster.cs" />
-    <Compile Include="Assets\@Scripts\UI\Popup\UI_Popup.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -941,10 +941,6 @@
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.31f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.Addressables.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Addressables.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Unity.ResourceManager">
       <HintPath>Library\ScriptAssemblies\Unity.ResourceManager.dll</HintPath>
       <Private>False</Private>
@@ -953,16 +949,12 @@
       <HintPath>Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.VisualStudio.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
+    <Reference Include="Unity.VisualStudio.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEditor.UI">
@@ -971,6 +963,14 @@
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Addressables.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Addressables.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.ScriptableBuildPipeline.Editor">
@@ -983,9 +983,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="spine-unity-examples-editor.csproj">
-      <Project>{1191741A-1D57-8706-38EF-BFA7B73FCB4B}</Project>
-      <Name>spine-unity-examples-editor</Name>
+    <ProjectReference Include="spine-csharp.csproj">
+      <Project>{A245DAA6-90AC-1177-E006-26984F22B171}</Project>
+      <Name>spine-csharp</Name>
     </ProjectReference>
     <ProjectReference Include="spine-unity.csproj">
       <Project>{E8A9D7EA-73F8-B7F5-1B4D-6E7800E3A064}</Project>
@@ -995,13 +995,13 @@
       <Project>{70A4D1A2-A761-4EA2-9D55-48B09E4DC2F8}</Project>
       <Name>spine-unity-examples</Name>
     </ProjectReference>
+    <ProjectReference Include="spine-unity-examples-editor.csproj">
+      <Project>{1191741A-1D57-8706-38EF-BFA7B73FCB4B}</Project>
+      <Name>spine-unity-examples-editor</Name>
+    </ProjectReference>
     <ProjectReference Include="spine-unity-editor.csproj">
       <Project>{4042B1AA-6C60-BDAD-1EE0-4ECB41011DF5}</Project>
       <Name>spine-unity-editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="spine-csharp.csproj">
-      <Project>{A245DAA6-90AC-1177-E006-26984F22B171}</Project>
-      <Name>spine-csharp</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
