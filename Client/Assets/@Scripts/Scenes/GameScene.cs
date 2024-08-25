@@ -16,6 +16,7 @@ public class GameScene : BaseScene
         map.name = "@BaseMap";
 
         Hero hero = Managers.Object.Spawn<Hero>(Vector3.zero);
+        hero.CreatureState = Define.ECreatureState.Idle;
 
         return true;
     }
