@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 621101116729802775}
   - component: {fileID: -7689598868351796904}
   m_Layer: 0
-  m_Name: hero
+  m_Name: Hero
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -122,9 +122,6 @@ MonoBehaviour:
     materialsInsideMask: []
     materialsOutsideMask: []
   disableRenderingOnOverride: 1
-  physicsPositionInheritanceFactor: {x: 1, y: 1}
-  physicsRotationInheritanceFactor: 1
-  physicsMovementRelativeTo: {fileID: 0}
   updateTiming: 1
   unscaledTime: 0
   _animationName: 
@@ -201,6 +198,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 3396818193280506437}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1920d325682972e418b4deb6961b1925, type: 3}
+  m_Script: {fileID: 11500000, guid: 65031cc9771ea5c4ab876831b447a684, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
