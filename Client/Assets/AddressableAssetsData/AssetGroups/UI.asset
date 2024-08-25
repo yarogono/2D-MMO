@@ -15,17 +15,17 @@ MonoBehaviour:
   m_GroupName: UI
   m_Data:
     m_SerializedData: []
-  m_GUID: d4ba17e45d70dfe4ca21eb28fc54fe52
+  m_GUID: c29aca868e53536489c0d835fcfa296b
   m_SerializeEntries:
-  - m_GUID: 6993d74d570d9104bb2aadf5b77134eb
+  - m_GUID: bf4d732f372409344acdbce35ea17c9c
     m_Address: UI_TitleScene
     m_ReadOnly: 0
     m_SerializedLabels:
-    - PreLoad
+    - Preload
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
-  m_Settings: {fileID: 11400000, guid: 9002df68884c063409d1551b8e753b89, type: 2}
+  m_Settings: {fileID: 11400000, guid: 4252986e79486f04d8150b2bad1e8d61, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: 73c41c9f2d583f34ca959a13d962291c, type: 2}
-    - {fileID: 11400000, guid: a3f309dbfa3a6224b844f112ec993784, type: 2}
+    - {fileID: 11400000, guid: 77c8af99bc9227944a6bfd072c1aa997, type: 2}
+    - {fileID: 11400000, guid: cd2a7784a5a25d343aa49ac9b1463fc6, type: 2}

@@ -99,7 +99,7 @@ namespace Spine.Unity {
 			if (initializeOnAwake) Initialize();
 		}
 
-		public virtual void Initialize () {
+		public void Initialize () {
 			bone = null;
 			valid = skeletonGraphic != null && skeletonGraphic.IsValid;
 			if (!valid) return;
@@ -119,7 +119,7 @@ namespace Spine.Unity {
 #endif
 		}
 
-		public virtual void LateUpdate () {
+		public void LateUpdate () {
 			if (!valid) {
 				Initialize();
 				return;
