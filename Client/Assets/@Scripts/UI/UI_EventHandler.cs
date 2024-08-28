@@ -18,6 +18,8 @@ public class UI_EventHandler : MonoBehaviour, IPointerClickHandler, IPointerDown
     public event Action<PointerEventData> OnPointerUpHandler = null;
     public event Action<PointerEventData> OnDragHandler = null;
 
+
+    // 조이스틱 기능 관련 참고 자료 => https://wergia.tistory.com/231
     public event Action<PointerEventData> OnBeginDragHandler = null;
     public event Action<PointerEventData> OnEndDragHandler = null;
 
