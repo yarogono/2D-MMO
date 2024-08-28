@@ -84,6 +84,14 @@ public class UI_Base : InitBase
                 evt.OnDragHandler -= action;
                 evt.OnDragHandler += action;
                 break;
+            case Define.EUIEvent.OnBeginDrag:
+                evt.OnBeginDragHandler -= action;
+                evt.OnBeginDragHandler += action;
+                break;
+            case Define.EUIEvent.OnEndDrag:
+                evt.OnEndDragHandler -= action;
+                evt.OnEndDragHandler += action;
+                break;
         }
     }
 }

@@ -11,12 +11,15 @@ using UnityEngine.EventSystems;
 // IPointerUpHandler : 버튼을 떼는 순간의 동작, 드래그 종료 처리 등에 사용됩니다.
 // IDragHandler : UI 요소의 위치 변경, 슬라이더 조작, 스크롤 뷰 제어 등에 사용됩니다.
 
-public class UI_EventHandler : MonoBehaviour, IPointerClickHandler, IPointerDownHandler, IPointerUpHandler, IDragHandler
+public class UI_EventHandler : MonoBehaviour, IPointerClickHandler, IPointerDownHandler, IPointerUpHandler, IDragHandler, IBeginDragHandler, IEndDragHandler
 {
     public event Action<PointerEventData> OnClickHandler = null;
     public event Action<PointerEventData> OnPointerDownHandler = null;
     public event Action<PointerEventData> OnPointerUpHandler = null;
     public event Action<PointerEventData> OnDragHandler = null;
+
+    public event Action<PointerEventData> OnBeginDragHandler = null;
+    public event Action<PointerEventData> OnEndDragHandler = null;
 
 
 
@@ -37,5 +40,18 @@ public class UI_EventHandler : MonoBehaviour, IPointerClickHandler, IPointerDown
     public void OnDrag(PointerEventData eventData)
     {
         OnDragHandler?.Invoke(eventData);
+    }
+
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+        Debug.Log("Begin");
+        OnBeginDragHandler?.Invoke(eventData);
+    }
+
+
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        Debug.Log("End");
+        OnEndDragHandler?.Invoke(eventData);
     }
 }
