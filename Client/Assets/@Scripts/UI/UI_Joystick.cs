@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class UI_Joystick : UI_Base
@@ -7,11 +5,24 @@ public class UI_Joystick : UI_Base
     enum GameObjects
     {
         JoystickBG,
-        JoystickCursorm,
+        JoystickCursor,
     }
 
     private GameObject _background;
     private GameObject _cursor;
     private float _radius;
     private Vector2 _touchPos;
+
+    public override bool Init()
+    {
+        if (base.Init() == false)
+            return false;
+
+        BindObjects(typeof(GameObjects));
+
+        GameObject joystickBG = GetObject((int)GameObjects.JoystickBG);
+        GameObject joystickCursor = GetObject((int)GameObjects.JoystickCursor);
+
+        return base.Init();
+    }
 }
