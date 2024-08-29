@@ -23,6 +23,12 @@ public class UI_Joystick : UI_Base
         GameObject joystickBG = GetObject((int)GameObjects.JoystickBG);
         GameObject joystickCursor = GetObject((int)GameObjects.JoystickCursor);
 
+        joystickBG.BindEvent((evt) =>
+        {
+            Debug.Log("Test");
+        }, Define.EUIEvent.OnBeginDrag);
+
+
         return base.Init();
     }
 }
