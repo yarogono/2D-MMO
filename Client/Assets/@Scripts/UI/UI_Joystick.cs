@@ -21,20 +21,24 @@ public class UI_Joystick : UI_Base
 
         BindObjects(typeof(GameObjects));
 
-        GameObject joystickBG = GetObject((int)GameObjects.JoystickBG);
-        GameObject joystickCursor = GetObject((int)GameObjects.JoystickCursor);
+        _background = GetObject((int)GameObjects.JoystickBG);
+        _cursor = GetObject((int)GameObjects.JoystickCursor);
 
-        joystickCursor.BindEvent(OnBeginDrag, Define.EUIEvent.OnBeginDrag);
-        joystickCursor.BindEvent(OnDrag, Define.EUIEvent.Drag);
-        joystickCursor.BindEvent(OnEndDrag, Define.EUIEvent.OnEndDrag);
+        gameObject.BindEvent(OnPointerDown, Define.EUIEvent.PointerDown);
+        gameObject.BindEvent(OnPointerUp, Define.EUIEvent.PointerUp);
+        gameObject.BindEvent(OnDrag, Define.EUIEvent.Drag);
 
 
-        return base.Init();
+        return true;
     }
 
-    public void OnBeginDrag(PointerEventData eventData)
+    public void OnPointerDown(PointerEventData eventData)
     {
-        Debug.Log("OnBeginDrag test");
+        Debug.Log("OnPointerDown test");
+    }
+    public void OnPointerUp(PointerEventData eventData)
+    {
+        Debug.Log("OnPointerUp test");
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -42,8 +46,4 @@ public class UI_Joystick : UI_Base
         Debug.Log("OnDrag test");
     }
 
-    public void OnEndDrag(PointerEventData eventData)
-    {
-        Debug.Log("OnEndDrag test");
-    }
 }

@@ -15,8 +15,6 @@ public static class Define
         PointerDown,
         PointerUp,
         Drag,
-        OnBeginDrag,
-        OnEndDrag,
     }
 
     public enum ESound

@@ -18,9 +18,7 @@ public class GameScene : BaseScene
         Hero hero = Managers.Object.Spawn<Hero>(Vector3.zero);
         hero.CreatureState = Define.ECreatureState.Idle;
 
-        GameObject joystickUI = Managers.Resource.Instantiate("UI_Joystick");
-        joystickUI.transform.position = Vector3.zero;
-        joystickUI.name = "@UI_Joystick";
+        Managers.UI.ShowBaseUI<UI_Joystick>();
 
         //StartLoadAssets();
 
