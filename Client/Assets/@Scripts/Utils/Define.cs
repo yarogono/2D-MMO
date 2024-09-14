@@ -17,6 +17,13 @@ public static class Define
         Drag,
     }
 
+    public enum EJoystcikState
+    {
+        PointerDown,
+        PointerUp,
+        Drag,
+    }
+
     public enum ESound
     {
         Bgm,

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using static Define;
 
 public class UI_Joystick : UI_Base
 {
@@ -26,9 +27,9 @@ public class UI_Joystick : UI_Base
         _cursor = GetObject((int)GameObjects.JoystickCursor);
         _radius = _background.GetComponent<RectTransform>().sizeDelta.y / 5;
 
-        gameObject.BindEvent(OnPointerDown, Define.EUIEvent.PointerDown);
-        gameObject.BindEvent(OnPointerUp, Define.EUIEvent.PointerUp);
-        gameObject.BindEvent(OnDrag, Define.EUIEvent.Drag);
+        gameObject.BindEvent(OnPointerDown, EUIEvent.PointerDown);
+        gameObject.BindEvent(OnPointerUp, EUIEvent.PointerUp);
+        gameObject.BindEvent(OnDrag, EUIEvent.Drag);
 
         return true;
     }
@@ -39,6 +40,8 @@ public class UI_Joystick : UI_Base
         _background.transform.position = eventData.position;
         _cursor.transform.position = eventData.position;
         _touchPos = eventData.position;
+
+        Managers.Game.JoystickState = EJoystcikState.PointerDown;
     }
     public void OnDrag(PointerEventData eventData)
     {
@@ -49,11 +52,17 @@ public class UI_Joystick : UI_Base
         Vector2 moveDir = touchDir.normalized;
         Vector2 newPosition = _touchPos + moveDir * moveDist;
         _cursor.transform.position = newPosition;
+
+        Managers.Game.MoveDir = moveDir;
+        Managers.Game.JoystickState = EJoystcikState.Drag;
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
         Debug.Log("OnPointerUp test");
         _cursor.transform.position = _touchPos;
+
+        Managers.Game.MoveDir = Vector2.zero;
+        Managers.Game.JoystickState = EJoystcikState.PointerUp;
     }
 }
