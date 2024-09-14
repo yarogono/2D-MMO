@@ -45,11 +45,15 @@ public class Hero : Creature
     {
         switch (joystickState)
         {
-            case EJoystcikState.Drag:
+            case EJoystcikState.PointerDown:
                 CreatureState = ECreatureState.Move;
+                break;
+            case EJoystcikState.Drag:
                 break;
             case EJoystcikState.PointerUp:
                 CreatureState = ECreatureState.Idle;
+                break;
+            default:
                 break;
         }
     }
