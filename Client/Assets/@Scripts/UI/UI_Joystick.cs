@@ -11,7 +11,7 @@ public class UI_Joystick : UI_Base
 
     private GameObject _background;
     private GameObject _cursor;
-    private RectTransform _cursorRectTransform;
+
     private float _radius;
     private Vector2 _touchPos;
 
@@ -30,8 +30,6 @@ public class UI_Joystick : UI_Base
         gameObject.BindEvent(OnPointerUp, Define.EUIEvent.PointerUp);
         gameObject.BindEvent(OnDrag, Define.EUIEvent.Drag);
 
-        _cursorRectTransform = (RectTransform)_cursor.transform;
-
         return true;
     }
 
@@ -40,18 +38,22 @@ public class UI_Joystick : UI_Base
         Debug.Log("OnPointerDown test");
         _background.transform.position = eventData.position;
         _cursor.transform.position = eventData.position;
+        _touchPos = eventData.position;
     }
     public void OnDrag(PointerEventData eventData)
     {
-        var inputDir = eventData.position - _cursorRectTransform.anchoredPosition;
-        _cursorRectTransform.anchoredPosition = inputDir;
+
+        Vector2 touchDir = (eventData.position - _touchPos);
+
+        float moveDist = Mathf.Min(touchDir.magnitude, _radius);
+        Vector2 moveDir = touchDir.normalized;
+        Vector2 newPosition = _touchPos + moveDir * moveDist;
+        _cursor.transform.position = newPosition;
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
         Debug.Log("OnPointerUp test");
-        _cursorRectTransform.anchoredPosition = ((RectTransform)_background.transform).anchoredPosition;
+        _cursor.transform.position = _touchPos;
     }
-
-
 }
