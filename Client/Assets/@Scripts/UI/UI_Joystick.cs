@@ -36,7 +36,6 @@ public class UI_Joystick : UI_Base
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        Debug.Log("OnPointerDown test");
         _background.transform.position = eventData.position;
         _cursor.transform.position = eventData.position;
         _touchPos = eventData.position;
@@ -59,7 +58,6 @@ public class UI_Joystick : UI_Base
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        Debug.Log("OnPointerUp test");
         _cursor.transform.position = _touchPos;
 
         Managers.Game.MoveDir = Vector2.zero;

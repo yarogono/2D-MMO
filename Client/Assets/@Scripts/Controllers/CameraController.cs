@@ -1,16 +1,32 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraController : MonoBehaviour
+public class CameraController : InitBase
 {
-    void Start()
+    private BaseObject _target;
+    public BaseObject Target
     {
-        
+        get { return _target; }
+        set { _target = value; }
     }
 
-    void Update()
+    public override bool Init()
     {
-        
+        if (base.Init() == false)
+            return false;
+
+        Camera.main.orthographicSize = 15.0f;
+
+        return true;
+    }
+
+    private void Update()
+    {
+        if (Target == null)
+            return;
+
+        Vector3 targetPosition = new Vector3(Target.CenterPosition.x, Target.CenterPosition.y, -20f);
+        gameObject.transform.position = targetPosition;
     }
 }
+
+
