@@ -1,3 +1,6 @@
+using System.Collections;
+using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameScene : BaseScene
@@ -18,11 +21,8 @@ public class GameScene : BaseScene
         Hero hero = Managers.Object.Spawn<Hero>(Vector3.zero);
         hero.CreatureState = Define.ECreatureState.Idle;
 
-        GameObject camera = Managers.Resource.Instantiate("Camera");
-        camera.transform.position = Vector3.zero;
-        camera.name = "@Camera";
-        CameraController cameraController = camera.GetComponent<CameraController>();
-        cameraController.Target = hero;
+        CameraController camera = Camera.main.GetOrAddComponent<CameraController>();
+        camera.Target = hero;
 
         Managers.UI.ShowBaseUI<UI_Joystick>();
 

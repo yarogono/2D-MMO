@@ -19,7 +19,7 @@ public class CameraController : InitBase
         return true;
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         if (Target == null)
             return;
