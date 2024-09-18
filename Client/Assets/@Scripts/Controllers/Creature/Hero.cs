@@ -39,11 +39,7 @@ public class Hero : Creature
 
     private void HeroMove()
     {
-        transform.Translate(_moveDir * Time.deltaTime * Speed);
-        if (_moveDir.x > 0)
-            LookLeft = false;
-        else
-            LookLeft = true;
+        transform.TranslateEx(_moveDir * Time.deltaTime * Speed);
     }
 
     private void HandleOnMoveDirChanged(Vector2 dir)
