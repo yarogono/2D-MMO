@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using static Define;
 
@@ -31,9 +32,18 @@ public class Hero : Creature
             case ECreatureState.Idle:
                 break;
             case ECreatureState.Move:
-                transform.Translate(_moveDir * Time.deltaTime * Speed);
+                HeroMove();
                 break;
         }
+    }
+
+    private void HeroMove()
+    {
+        transform.Translate(_moveDir * Time.deltaTime * Speed);
+        if (_moveDir.x > 0)
+            LookLeft = false;
+        else
+            LookLeft = true;
     }
 
     private void HandleOnMoveDirChanged(Vector2 dir)
