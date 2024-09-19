@@ -24,7 +24,8 @@ public class CameraController : InitBase
         if (Target == null)
             return;
 
-        Vector3 targetPosition = new Vector3(Target.CenterPosition.x, Target.CenterPosition.y, -20f);
+        float cameraZposition = -20f;
+        Vector3 targetPosition = new Vector3(Target.CenterPosition.x, Target.CenterPosition.y, cameraZposition);
         gameObject.transform.position = targetPosition;
     }
 }
