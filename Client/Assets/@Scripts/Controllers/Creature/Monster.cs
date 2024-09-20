@@ -9,7 +9,7 @@ public class Monster : Creature
 
         CreatureType = ECreatureType.Monster;
         CreatureState = ECreatureState.Idle;
-        Speed = 5.0f;
+        Speed = 3.0f;
 
         return true;
     }
