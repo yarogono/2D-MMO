@@ -26,6 +26,8 @@ public class GameScene : BaseScene
 
         Managers.UI.ShowBaseUI<UI_Joystick>();
 
+        Monster monster = Managers.Object.Spawn<Monster>(Vector3.zero);
+
         //StartLoadAssets();
 
         return true;
