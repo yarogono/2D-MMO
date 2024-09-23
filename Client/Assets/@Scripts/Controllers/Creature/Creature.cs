@@ -1,3 +1,5 @@
+using System.Collections;
+using UnityEngine;
 using static Define;
 
 public class Creature : BaseObject
@@ -52,4 +54,40 @@ public class Creature : BaseObject
                 break;
         }
     }
+
+    #region AI
+    public float UpdateAITick { get; protected set; } = 0.0f;
+
+    protected IEnumerator CoUpdateAI()
+    {
+        while (true)
+        {
+            switch (CreatureState)
+            {
+                case ECreatureState.Idle:
+                    UpdateIdle();
+                    break;
+                case ECreatureState.Move:
+                    UpdateMove();
+                    break;
+                case ECreatureState.Skill:
+                    UpdateSkill();
+                    break;
+                case ECreatureState.Dead:
+                    UpdateDead();
+                    break;
+            }
+        }
+
+        if (UpdateAITick > 0)
+            yield return new WaitForSeconds(UpdateAITick);
+        else
+            yield return null;
+    }
+
+    protected virtual void UpdateIdle() { }
+    protected virtual void UpdateMove() { }
+    protected virtual void UpdateSkill() { }
+    protected virtual void UpdateDead() { }
+    #endregion
 }
