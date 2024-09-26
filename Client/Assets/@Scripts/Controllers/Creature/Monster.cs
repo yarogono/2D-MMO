@@ -44,6 +44,11 @@ public class Monster : Creature
         return true;
     }
 
+    private void Start()
+    {
+        _initPos = transform.position;
+    }
+
 
     #region AI
     public float SearchDistance { get; private set; } = 8.0f;
@@ -102,11 +107,55 @@ public class Monster : Creature
     protected override void UpdateMove()
     {
         Debug.Log("Move");
+
+        if (_target == null)
+        {
+            // Patrol or Return
+            Vector3 dir = (_destPos - transform.position);
+            float moveDist = Mathf.Min(dir.magnitude, Time.deltaTime * Speed);
+            transform.TranslateEx(dir.normalized * moveDist);
+
+            if (dir.sqrMagnitude <= 0.01f)
+            {
+                CreatureState = ECreatureState.Idle;
+            }
+        }
+        else
+        {
+            // Chase
+            Vector3 dir = _target.transform.position - transform.position;
+            float distToTargetSqr = dir.sqrMagnitude;
+            float attackDistanceSqr = AttackDistance * AttackDistance;
+
+            if (distToTargetSqr < attackDistanceSqr)
+            {
+                // 공격 범위 이내로 들어왔으면 공격.
+                CreatureState = ECreatureState.Skill;
+            }
+            else
+            {
+                // 공격 범위 밖이라면 추적.
+                float moveDist = Mathf.Min(dir.magnitude, Time.deltaTime * Speed);
+                transform.TranslateEx(dir.normalized * moveDist);
+
+                // 너무 멀어지면 포기
+                float searchDistanceSqr = SearchDistance * SearchDistance;
+                if (distToTargetSqr > searchDistanceSqr)
+                {
+                    _destPos = _initPos;
+                    _target = null;
+                    CreatureState = ECreatureState.Move;
+                }
+            }
+        }
     }
 
     protected override void UpdateSkill()
     {
         Debug.Log("Skill");
+
+
+        CreatureState = ECreatureState.Move;
     }
 
     protected override void UpdateDead()

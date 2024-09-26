@@ -90,4 +90,20 @@ public class Creature : BaseObject
     protected virtual void UpdateSkill() { }
     protected virtual void UpdateDead() { }
     #endregion
+
+    #region Wait
+    protected Coroutine _coWait;
+
+    protected void StartWait(float seconds)
+    {
+        // CancelWait();
+        _coWait = StartCoroutine(CoWait(seconds));
+    }
+
+    IEnumerator CoWait(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        _coWait = null;
+    }
+    #endregion
 }
