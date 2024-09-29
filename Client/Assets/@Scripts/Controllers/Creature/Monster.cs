@@ -27,8 +27,8 @@ public class Monster : Creature
                         break;
                 }
             }
-        }
     }
+        }
 
     public override bool Init()
     { 
@@ -131,6 +131,7 @@ public class Monster : Creature
             {
                 // 공격 범위 이내로 들어왔으면 공격.
                 CreatureState = ECreatureState.Skill;
+                StartWait(2.0f);
             }
             else
             {
@@ -154,6 +155,8 @@ public class Monster : Creature
     {
         Debug.Log("Skill");
 
+        if (_coWait != null)
+            return;
 
         CreatureState = ECreatureState.Move;
     }

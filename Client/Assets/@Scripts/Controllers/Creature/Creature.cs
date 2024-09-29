@@ -105,5 +105,12 @@ public class Creature : BaseObject
         yield return new WaitForSeconds(seconds);
         _coWait = null;
     }
+
+    protected void CancelWait()
+    {
+        if (_coWait != null)
+            StopCoroutine(_coWait);
+        _coWait = null;
+    }
     #endregion
 }
