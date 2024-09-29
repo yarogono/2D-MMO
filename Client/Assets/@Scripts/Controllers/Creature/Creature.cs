@@ -77,12 +77,13 @@ public class Creature : BaseObject
                     UpdateDead();
                     break;
             }
+
+            if (UpdateAITick > 0)
+                yield return new WaitForSeconds(UpdateAITick);
+            else
+                yield return null;
         }
 
-        if (UpdateAITick > 0)
-            yield return new WaitForSeconds(UpdateAITick);
-        else
-            yield return null;
     }
 
     protected virtual void UpdateIdle() { }

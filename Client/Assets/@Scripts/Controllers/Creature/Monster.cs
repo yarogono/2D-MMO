@@ -27,8 +27,8 @@ public class Monster : Creature
                         break;
                 }
             }
-    }
         }
+    }
 
     public override bool Init()
     { 
