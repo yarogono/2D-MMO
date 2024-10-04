@@ -36,13 +36,13 @@ namespace Data
     [Serializable]
 	public class CreatureDataLoader : ILoader<int, CreatureData>
 	{
-		public List<CreatureData> tests = new List<CreatureData>();
+		public List<CreatureData> creatures = new List<CreatureData>();
 
 		public Dictionary<int, CreatureData> MakeDict()
 		{
 			Dictionary<int, CreatureData> dict = new Dictionary<int, CreatureData>();
-			foreach (CreatureData testData in tests)
-				dict.Add(testData.DataId, testData);
+			foreach (CreatureData creature in creatures)
+				dict.Add(creature.DataId, creature);
 
 			return dict;
 		}

@@ -10,22 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: MyUnityProjectAssetGroup
+  m_Name: Data
   m_EditorClassIdentifier: 
-  m_GroupName: MyUnityProjectAssetGroup
+  m_GroupName: Packed Assets
   m_Data:
     m_SerializedData: []
-  m_GUID: 0eb85f6675716d74ab8829fe760a84b4
-  m_SerializeEntries:
-  - m_GUID: 2c220fb8cae4338458dccfc59bd80df6
-    m_Address: CreatureData
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PreLoad
-    FlaggedDuringContentUpdateRestriction: 0
+  m_GUID: b445ce90a62275d49b95e3306636a129
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 4252986e79486f04d8150b2bad1e8d61, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: 6a86b911f1371de48adbb1c0373e8a29, type: 2}
-    - {fileID: 11400000, guid: cd9e5ea3a0bcf9946bf99b47097304cd, type: 2}
+    - {fileID: 11400000, guid: 7e5ef0d81f8297f46b4d259a411388d9, type: 2}
+    - {fileID: 11400000, guid: cbe2d756d0046a2478dc24786e4808e8, type: 2}
