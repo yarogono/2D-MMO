@@ -36,13 +36,21 @@ public class Monster : Creature
             return false;
 
         CreatureType = ECreatureType.Monster;
-        CreatureState = ECreatureState.Idle;
         Speed = 3.0f;
 
         StartCoroutine(CoUpdateAI());
 
         return true;
     }
+
+    public override void SetInfo(int templateID)
+    {
+        base.SetInfo(templateID);
+
+        // State
+        CreatureState = ECreatureState.Idle;
+    }
+
 
     private void Start()
     {
@@ -56,11 +64,9 @@ public class Monster : Creature
     Creature _target;
     Vector3 _destPos;
     Vector3 _initPos;
-
+    
     protected override void UpdateIdle()
     {
-        Debug.Log("Idle");
-
         // Patrol
         {
             int patrolPercent = 10;

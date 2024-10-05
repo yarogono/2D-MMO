@@ -22,7 +22,7 @@ public class TitleScene : BaseScene
 
             if (count == totalCount)
             {
-                //Managers.Data.Init();
+                Managers.Data.Init();
             }
         });
     }

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using static Define;
@@ -19,7 +17,7 @@ public class GameScene : BaseScene
         map.transform.position = Vector3.zero;
         map.name = "@BaseMap";
 
-        Hero hero = Managers.Object.Spawn<Hero>(new Vector3Int(-10, -5, 0));
+        Hero hero = Managers.Object.Spawn<Hero>(new Vector3Int(-10, -5, 0), HERO_KNIGHT_ID);
         hero.CreatureState = ECreatureState.Idle;
 
         CameraController camera = Camera.main.GetOrAddComponent<CameraController>();
@@ -27,25 +25,13 @@ public class GameScene : BaseScene
 
         Managers.UI.ShowBaseUI<UI_Joystick>();
 
-        Monster monster = Managers.Object.Spawn<Monster>(new Vector3Int(0, -1, 0));
-        monster.CreatureState = ECreatureState.Idle;
-
-        //StartLoadAssets();
-
-        return true;
-    }
-
-    void StartLoadAssets()
-    {
-        Managers.Resource.LoadAllAsync<Object>("PreLoad", (key, count, totalCount) =>
         {
-            Debug.Log($"{key} {count}/{totalCount}");
+            Managers.Object.Spawn<Monster>(new Vector3Int(0, -1, 0), MONSTER_BEAR_ID);
+            //Managers.Object.Spawn<Monster>(new Vector3Int(0, -1, 0), MONSTER_SLIME_ID);
+        }
 
-            if (count == totalCount)
-            {
-                //Managers.Data.Init();
-            }
-        });
+        // TODO
+        return true;
     }
 
     public override void Clear()
