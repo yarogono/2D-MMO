@@ -17,17 +17,15 @@ public class GameScene : BaseScene
         map.transform.position = Vector3.zero;
         map.name = "@BaseMap";
 
-        Hero hero = Managers.Object.Spawn<Hero>(new Vector3Int(-10, -5, 0), HERO_KNIGHT_ID);
-        hero.CreatureState = ECreatureState.Idle;
+        HeroCamp camp = Managers.Object.Spawn<HeroCamp>(new Vector3Int(-10, -5, 0), 0);
 
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < 5; i++)
         {
-            Hero hero2 = Managers.Object.Spawn<Hero>(new Vector3Int(-10 + Random.Range(-5, 5), -5 + Random.Range(-5, 5), 0), HERO_KNIGHT_ID);
-            hero2.CreatureState = ECreatureState.Idle;
+            Hero hero = Managers.Object.Spawn<Hero>(new Vector3Int(-10 + Random.Range(-5, 5), -5 + Random.Range(-5, 5), 0), HERO_KNIGHT_ID);
         }
 
         CameraController camera = Camera.main.GetOrAddComponent<CameraController>();
-        camera.Target = hero;
+        camera.Target = camp;
 
         Managers.UI.ShowBaseUI<UI_Joystick>();
 

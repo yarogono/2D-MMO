@@ -34,6 +34,7 @@ public static class Define
     public enum EObjectType
     {
         None,
+        HeroCamp,
         Creature,
         Projectile,
         Env,
@@ -63,7 +64,22 @@ public static class Define
         Dead
     }
 
-    public const int CAMERA_PROJECTION_SIZE = 12;
+    public enum ELayer
+    {
+        TransparentFX = 1,
+		IgnoreRaycast = 2,
+		Default = 0,
+		Dummy1 = 3,
+		Water = 4,
+		UI = 5,
+		Hero = 6,
+		Monster = 7,
+		GatheringResource = 8,
+		Obstacle = 9,
+		Projectile = 10,
+	}
+
+public const int CAMERA_PROJECTION_SIZE = 12;
 
     public const int HERO_WIZARD_ID = 201000;
     public const int HERO_KNIGHT_ID = 201001;

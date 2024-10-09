@@ -12,11 +12,11 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Hero
+  - Monster
+  - Env
+  - Obstacle
+  - Projectile
   - 
   - 
   - 
