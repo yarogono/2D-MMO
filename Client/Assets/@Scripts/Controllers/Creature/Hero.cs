@@ -10,13 +10,20 @@ public class Hero : Creature
             return false;
 
         CreatureType = ECreatureType.Hero;
-        CreatureState = ECreatureState.Idle;
-        Speed = 5.0f;
+        MoveSpeed = 5.0f;
 
         Managers.Game.OnJoystickStateChanged -= HandleOnJoystickStateChanged;
         Managers.Game.OnJoystickStateChanged += HandleOnJoystickStateChanged;
 
         return true;
+    }
+
+    public override void SetInfo(int templateID)
+    {
+        base.SetInfo(templateID);
+
+        // State
+        CreatureState = ECreatureState.Idle;
     }
 
     private void HandleOnJoystickStateChanged(EJoystcikState joystickState)
