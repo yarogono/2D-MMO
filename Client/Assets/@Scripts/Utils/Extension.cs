@@ -25,6 +25,14 @@ public static class Extension
         return go != null && go.activeSelf;
     }
 
+    public static bool IsValid(this BaseObject bo)
+    {
+        if (bo == null || bo.isActiveAndEnabled == false)
+            return false;
+
+        return true;
+    }
+
     // GameObject의 childs를 전부 Destory
     public static void DestroyChilds(this GameObject go)
     {

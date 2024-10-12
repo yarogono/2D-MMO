@@ -10,8 +10,7 @@ public class BaseObject : InitBase
     public SkeletonAnimation SkeletonAnim { get; private set; }
     public Rigidbody2D RigidBody { get; private set; }
 
-    //public float ColliderRadius { get { return Collider != null ? Collider.radius : 0.0f; } }
-    public float ColliderRadius { get { return Collider?.radius ?? 0.0f; } }
+    public float ColliderRadius { get { return Collider != null ? Collider.radius : 0.0f; } }
     public Vector3 CenterPosition { get { return transform.position + Vector3.up * ColliderRadius; } }
 
     public int DataTemplateID { get; set; }
