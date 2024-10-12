@@ -17,7 +17,7 @@ public static class Define
         Drag,
     }
 
-    public enum EJoystcikState
+    public enum EJoystickState
     {
         PointerDown,
         PointerUp,
@@ -55,6 +55,15 @@ public static class Define
         Move,
         Skill,
         Dead,
+    }
+
+    public enum EHeroMoveState
+    {
+        None,
+        TargetMonster,
+        CollectEnv,
+        ReturnToCamp,
+        ForceMove
     }
 
     public enum EEnvState

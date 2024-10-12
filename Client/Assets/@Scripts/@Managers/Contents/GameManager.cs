@@ -17,8 +17,8 @@ public class GameManager
         }
     }
 
-    private EJoystcikState _joystickState;
-    public EJoystcikState JoystickState
+    private EJoystickState _joystickState;
+    public EJoystickState JoystickState
     {
         get { return _joystickState; }
         set
@@ -31,6 +31,6 @@ public class GameManager
 
     #region Action
     public event Action<Vector2> OnMoveDirChanged;
-    public event Action<EJoystcikState> OnJoystickStateChanged;
+    public event Action<EJoystickState> OnJoystickStateChanged;
     #endregion
 }

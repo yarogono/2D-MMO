@@ -145,7 +145,6 @@ public class Creature : BaseObject
             else
                 yield return null;
         }
-
     }
 
     protected virtual void UpdateIdle() { }

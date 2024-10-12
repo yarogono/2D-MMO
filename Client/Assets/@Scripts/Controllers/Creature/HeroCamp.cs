@@ -20,7 +20,7 @@ public class HeroCamp : BaseObject
         Managers.Game.OnMoveDirChanged += HandleOnMoveDirChanged;
 
         Collider.includeLayers = (1 << (int)Define.ELayer.Obstacle);
-        Collider.includeLayers = (1 << (int)Define.ELayer.Monster) | (1 << (int)Define.ELayer.Hero);
+        Collider.excludeLayers = (1 << (int)Define.ELayer.Monster) | (1 << (int)Define.ELayer.Hero);
 
         ObjectType = Define.EObjectType.HeroCamp;
 
