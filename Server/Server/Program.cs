@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using ChatServer.Configuration;
 using Logging;
+using Server;
 using Tcp;
 
 namespace ChatServer;
@@ -10,10 +11,12 @@ public class Program
 
     static void Main(string[] args)
     {
-        Run();
+
+
+        RunServer();
     }
 
-    static async void Run()
+    static async void RunServer()
     {
         Console.Title = "Chat Server";
 
@@ -22,5 +25,11 @@ public class Program
         var configuration = builder.RegisterModule<ConfigurationModule>();
         var logger = builder.RegisterModule<LoggingModule>();
         var tcp = builder.RegisterModule<TcpModule>();
+
+        var container = builder.Build();
+
+        Engine.SetContainer(container);
+
+        Console.WriteLine("Server Start!");
     }
 }
