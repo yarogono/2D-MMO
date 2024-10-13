@@ -1,6 +1,6 @@
 ﻿namespace Logging;
 
-public interface IChatServerLogger
+public interface IServerLogger
 {
     public void Info(string message);
     public void Error(string message);

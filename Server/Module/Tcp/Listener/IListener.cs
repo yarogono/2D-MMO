@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Tcp.Listener
+﻿namespace Tcp.Listener
 {
-    internal interface IListener
+    public interface IListener
     {
     }
 }

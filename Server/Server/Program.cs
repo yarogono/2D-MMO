@@ -1,18 +1,16 @@
 ﻿using Autofac;
-using ChatServer.Configuration;
+using Server.Configuration;
 using Logging;
 using Server;
 using Tcp;
 
-namespace ChatServer;
+namespace Server;
 
 public class Program
 {
 
     static void Main(string[] args)
     {
-
-
         RunServer();
     }
 

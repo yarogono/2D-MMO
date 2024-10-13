@@ -1,15 +1,15 @@
-﻿using ChatServer.Configuration;
+﻿using Server.Configuration;
 using Microsoft.Extensions.Logging;
 using ZLogger;
 using ZLogger.Providers;
 
 namespace Logging;
 
-public class ChatServerLogger : IChatServerLogger
+public class ServerLogger : IServerLogger
 {
-    private readonly ChatServerConfiguration _chatServerConfiguration;
+    private readonly ServerConfiguration _chatServerConfiguration;
 
-    private ILogger<ChatServerLogger> _logger;
+    private ILogger<ServerLogger> _logger;
 
     public void CreateLogger()
     {
@@ -41,7 +41,7 @@ public class ChatServerLogger : IChatServerLogger
             // logging.AddZLoggerConsole(options => options.UseJsonFormatter());
         });
 
-        _logger = factory.CreateLogger<ChatServerLogger>();
+        _logger = factory.CreateLogger<ServerLogger>();
     }
 
     public void Error(string message)

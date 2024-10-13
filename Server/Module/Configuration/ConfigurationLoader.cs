@@ -1,15 +1,15 @@
 ﻿using System.Text.Json;
 
-namespace ChatServer.Configuration;
+namespace Server.Configuration;
 
 public class ConfigurationLoader
 {
     private const string ConfigurationFileFullPathName = "../../../../Module/Configuration/configuration.json";
 
-    public ChatServerConfiguration GetChatServerConfiguration()
+    public ServerConfiguration GetServerConfiguration()
     {
         var configuration = ReadConfigurationAsync();
-        var chatServerConfiguration = JsonSerializer.Deserialize<ChatServerConfiguration>(configuration);
+        var chatServerConfiguration = JsonSerializer.Deserialize<ServerConfiguration>(configuration);
         if (chatServerConfiguration == null)
         {
             throw new Exception($"Unable to deserialzie {ConfigurationFileFullPathName}");
