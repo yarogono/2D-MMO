@@ -11,6 +11,11 @@ public class ServerLogger : IServerLogger
 
     private ILogger<ServerLogger> _logger;
 
+    public ServerLogger(ServerConfiguration chatServerConfiguration)
+    {
+        _chatServerConfiguration = chatServerConfiguration;
+    }
+
     public void CreateLogger()
     {
         if (_logger != null)

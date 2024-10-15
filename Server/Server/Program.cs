@@ -1,7 +1,6 @@
 ﻿using Autofac;
 using Server.Configuration;
 using Logging;
-using Server;
 using Tcp;
 
 namespace Server;
@@ -20,14 +19,26 @@ public class Program
 
         var builder = new ContainerBuilder();
 
-        var configuration = builder.RegisterModule<ConfigurationModule>();
-        var logger = builder.RegisterModule<LoggingModule>();
-        var tcp = builder.RegisterModule<TcpModule>();
+        builder.RegisterModule<ConfigurationModule>();
+        builder.RegisterModule<LoggingModule>();
+        builder.RegisterModule<TcpModule>();
 
         var container = builder.Build();
+
+        using (var scope = container.BeginLifetimeScope())
+        {
+            var serverLogger = scope.Resolve<ServerLogger>();
+            serverLogger.CreateLogger();
+
+            var tcpService = scope.Resolve<TcpServer>();
+            TcpServer.Start();
+
+        }
 
         Engine.SetContainer(container);
 
         Console.WriteLine("Server Start!");
+
+        Console.ReadLine();
     }
 }

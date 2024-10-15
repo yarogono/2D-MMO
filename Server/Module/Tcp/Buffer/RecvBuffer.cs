@@ -12,7 +12,7 @@
         }
 
         public int DataSize { get { return _writePos - _readPos; } }
-        public int FreeSize { get { return _buffer.Count - _writePos} }
+        public int FreeSize { get { return _buffer.Count - _writePos; } }
 
         public ArraySegment<byte> ReadSegment
         {
