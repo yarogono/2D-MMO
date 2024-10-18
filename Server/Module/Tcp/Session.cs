@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using Microsoft.Extensions.Logging;
+using System.Net;
 using System.Net.Sockets;
 using Tcp.Buffer;
 
@@ -52,6 +53,13 @@ namespace Tcp
 
         public SocketAsyncEventArgs ReceiveEventArgs { get; private set; }
         public SocketAsyncEventArgs SendEventArgs { get; private set; }
+
+        private readonly ILogger<Session> _logger;
+
+        public Session(ILogger<Session> logger)
+        {
+            _logger = logger;
+        }
 
         public abstract void OnConnected(EndPoint endPoint);
         public abstract int OnRecv(ArraySegment<byte> buffer);
@@ -130,7 +138,7 @@ namespace Tcp
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Session.Disconnect: {ex.Message}");
+                _logger.LogInformation($"Session.Disconnect: {ex.Message}");
             }
 
             Clear();
@@ -158,7 +166,7 @@ namespace Tcp
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Session.ResigerSend: {ex.Message}");
+                _logger.LogError($"Session.ResigerSend: {ex.Message}");
             }
         }
 
@@ -180,7 +188,7 @@ namespace Tcp
                     }
                     catch (Exception e)
                     {
-                        Console.WriteLine($"OnSendCompleted Failed {e}");
+                        _logger.LogError($"OnSendCompleted Failed {e}");
                     }
                 }
                 else
@@ -207,7 +215,7 @@ namespace Tcp
             }
             catch (Exception e)
             {
-                Console.WriteLine($"RegisterRecv Failed {e}");
+                _logger.LogError($"RegisterRecv Failed {e}");
             }
         }
 
@@ -240,7 +248,7 @@ namespace Tcp
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine($"OnRecvCompleted Failed {e}");
+                    _logger.LogError($"OnRecvCompleted Failed {e}");
                 }
             }
             else

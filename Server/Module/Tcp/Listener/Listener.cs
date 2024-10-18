@@ -66,7 +66,7 @@ namespace Tcp.Listener
                     session.OnConnected(args.AcceptSocket.RemoteEndPoint);
                 }
                 else
-                    _logger.LogInformation(args.SocketError.ToString());
+                    _logger.LogError($"Listener: {args.SocketError.ToString()}");
             }
             catch (Exception ex)
             {
