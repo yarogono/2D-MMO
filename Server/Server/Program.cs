@@ -25,19 +25,24 @@ public class Program
 
         var container = builder.Build();
 
-        using (var scope = container.BeginLifetimeScope())
-        {
-            var serverLogger = scope.Resolve<ServerLogger>();
-            serverLogger.CreateLogger();
 
-            var tcpService = scope.Resolve<TcpServer>();
-            TcpServer.Start();
+        var scope = container.BeginLifetimeScope();
 
-        }
+        var configurationModule = scope.Resolve<ServerConfiguration>();
+        ServerLogger serverLogger = new ServerLogger(configurationModule);
+
+        var factory = serverLogger.CreateLogger();
+            
+
+        var moduleLogger = scope.Resolve<Logger>();
+        moduleLogger.CreateLogger(factory);
+
+        var tcpService = scope.Resolve<TcpServer>();
+        TcpServer.Start();
 
         Engine.SetContainer(container);
 
-        Console.WriteLine("Server Start!");
+        moduleLogger.Info("Server Start!");
 
         Console.ReadLine();
     }
