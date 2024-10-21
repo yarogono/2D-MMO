@@ -9,6 +9,9 @@ namespace Tcp
     {
         public static readonly int HeaderSize = 2;
 
+        protected PacketSession(ILogger<Session> logger) : base(logger)
+        {
+        }
 
         public sealed override int OnRecv(ArraySegment<byte> buffer)
         {
