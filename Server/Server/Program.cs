@@ -7,6 +7,7 @@ namespace Server;
 
 public class Program
 {
+    internal static ServerOption ServerOpt { get; private set; }
 
     static void Main(string[] args)
     {
@@ -15,8 +16,6 @@ public class Program
 
     static async void RunServer()
     {
-        Console.Title = "Chat Server";
-
         var builder = new ContainerBuilder();
 
         builder.RegisterModule<ConfigurationModule>();
@@ -42,7 +41,10 @@ public class Program
 
         Engine.SetContainer(container);
 
-        moduleLogger.Info("Server Start!");
+
+        Console.Title = "Chat Server";
+        ServerOpt = new();
+        ServerOpt.WriteConsole();
 
         Console.ReadLine();
     }

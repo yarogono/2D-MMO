@@ -8,12 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Utils\**" />
-    <EmbeddedResource Remove="Utils\**" />
-    <None Remove="Utils\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Autofac" Version="8.0.0" />
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="9.0.0" />
   </ItemGroup>
@@ -22,6 +16,11 @@
     <ProjectReference Include="..\Module\Configuration\Configuration.csproj" />
     <ProjectReference Include="..\Module\Logging\Logging.csproj" />
     <ProjectReference Include="..\Module\Tcp\Tcp.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Game\" />
+    <Folder Include="Utils\" />
   </ItemGroup>
 
 </Project>
