@@ -2,6 +2,7 @@
 using Server.Configuration;
 using Logging;
 using Tcp;
+using Server.Data;
 
 namespace Server;
 
@@ -45,6 +46,8 @@ public class Program
         Console.Title = "Chat Server";
         ServerOpt = new();
         ServerOpt.WriteConsole();
+
+        DataManager.LoadData();
 
         Console.ReadLine();
     }
