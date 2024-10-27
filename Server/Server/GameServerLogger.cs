@@ -5,12 +5,12 @@ using ZLogger.Providers;
 
 namespace Server
 {
-    public class ServerLogger
+    public class GameServerLogger
     {
         private readonly ServerConfiguration _chatServerConfiguration;
 
 
-        public ServerLogger(ServerConfiguration chatServerConfiguration)
+        public GameServerLogger(ServerConfiguration chatServerConfiguration)
         {
             _chatServerConfiguration = chatServerConfiguration;
         }

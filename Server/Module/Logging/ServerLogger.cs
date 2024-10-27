@@ -2,16 +2,16 @@
 
 namespace Logging;
 
-public class Logger : IServerLogger
+public class ServerLogger : IServerLogger
 {
-    private ILogger<Logger> _logger;
+    private ILogger<ServerLogger> _logger;
 
     public void CreateLogger(ILoggerFactory loggerFactory)
     {
         if (_logger != null)
             return;
 
-        _logger = loggerFactory.CreateLogger<Logger>();
+        _logger = loggerFactory.CreateLogger<ServerLogger>();
     }
 
     public void Error(string message)

@@ -4,9 +4,9 @@ using Tcp.Listener;
 
 public class NetworkService : INetworkService
 {
-    IListener ClientListener;
+    private readonly IGameListener ClientListener;
 
-    public NetworkService(IListener listener)
+    public NetworkService(IGameListener listener)
     {
         ClientListener = listener;
     }

@@ -3,6 +3,7 @@ using Server.Configuration;
 using Logging;
 using Tcp;
 using Server.Data;
+using Microsoft.Extensions.Logging;
 
 namespace Server;
 
@@ -17,37 +18,33 @@ public class Program
 
     static async void RunServer()
     {
+        Console.Title = "Chat Server";
+
         var builder = new ContainerBuilder();
 
         builder.RegisterModule<ConfigurationModule>();
         builder.RegisterModule<LoggingModule>();
         builder.RegisterModule<TcpModule>();
+        builder.RegisterModule<ServerModule>();
 
         var container = builder.Build();
-
-
-        var scope = container.BeginLifetimeScope();
-
-        var configurationModule = scope.Resolve<ServerConfiguration>();
-        ServerLogger serverLogger = new ServerLogger(configurationModule);
-
-        var factory = serverLogger.CreateLogger();
-            
-
-        var moduleLogger = scope.Resolve<Logger>();
-        moduleLogger.CreateLogger(factory);
-
-        var tcpService = scope.Resolve<TcpServer>();
-        TcpServer.Start();
-
         Engine.SetContainer(container);
 
+        var configurationModule = Engine.Resolve<ServerConfiguration>();
+        GameServerLogger serverLogger = new GameServerLogger(configurationModule);
 
-        Console.Title = "Chat Server";
-        ServerOpt = new();
-        ServerOpt.WriteConsole();
+        var factory = serverLogger.CreateLogger();
+
+        var moduleLogger = Engine.Resolve<IServerLogger>();
+        moduleLogger.CreateLogger(factory);
+
+        var networkService = container.Resolve<INetworkService>();
+        networkService.Star();
 
         DataManager.LoadData();
+
+        ServerOpt = new();
+        ServerOpt.WriteConsole();
 
         Console.ReadLine();
     }

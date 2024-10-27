@@ -1,10 +1,11 @@
 ﻿using System.Net.Sockets;
 using System.Net;
 using Microsoft.Extensions.Logging;
+using Logging;
 
 namespace Tcp.Listener
 {
-    public class Listener : IListener
+    public class GameListener : IGameListener
     {
         Socket _listenSocket;
         Func<Session> _sessionFactory;
@@ -12,9 +13,9 @@ namespace Tcp.Listener
         SocketAsyncEventArgsPool ReceiveEventArgsPool;
         SocketAsyncEventArgsPool SendEventArgsPool;
 
-        private readonly ILogger<Listener> _logger;
+        private readonly IServerLogger _logger;
 
-        public Listener(ILogger<Listener> logger)
+        public GameListener(IServerLogger logger)
         {
             _logger = logger;
         }
@@ -50,7 +51,7 @@ namespace Tcp.Listener
             }
             catch (Exception ex)
             {
-                _logger.LogError($"Listener: {ex.Message}");
+                _logger.Error($"Listener: {ex.Message}");
             }
         }
 
@@ -66,11 +67,11 @@ namespace Tcp.Listener
                     session.OnConnected(args.AcceptSocket.RemoteEndPoint);
                 }
                 else
-                    _logger.LogError($"Listener: {args.SocketError.ToString()}");
+                    _logger.Error($"Listener: {args.SocketError.ToString()}");
             }
             catch (Exception ex)
             {
-                _logger.LogError($"Listener: {ex.Message}");
+                _logger.Error($"Listener: {ex.Message}");
             }
 
             RegisterAccept(args);
