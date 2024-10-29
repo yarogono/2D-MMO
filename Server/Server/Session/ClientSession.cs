@@ -1,11 +1,14 @@
 ﻿using Microsoft.Extensions.Logging;
 using System.Net;
+using System.Numerics;
 using Tcp;
 
 namespace Server.Session
 {
     public class ClientSession : PacketSession
     {
+        public int SessionId { get; set; }
+
         public ClientSession(ILogger<Tcp.Session> logger) : base(logger)
         {
         }
