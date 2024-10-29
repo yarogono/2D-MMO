@@ -13,6 +13,10 @@ namespace Server.Session
         {
         }
 
+        public ClientSession()
+        {
+        }
+
         public override void OnConnected(EndPoint endPoint)
         {
             throw new NotImplementedException();
