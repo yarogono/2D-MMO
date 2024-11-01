@@ -1,6 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
 using System.Net;
-using System.Numerics;
 using Tcp;
 
 namespace Server.Session
@@ -10,10 +9,6 @@ namespace Server.Session
         public int SessionId { get; set; }
 
         public ClientSession(ILogger<Tcp.Session> logger) : base(logger)
-        {
-        }
-
-        public ClientSession()
         {
         }
 

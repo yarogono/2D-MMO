@@ -2,12 +2,20 @@
 {
     class SessionManager
     {
-        static SessionManager _session = new SessionManager();
+        static SessionManager _session;
         public static SessionManager Instance { get { return _session; } }
 
         int _sessionId = 0;
         Dictionary<int, ClientSession> _sessions = new Dictionary<int, ClientSession>();
         object _lock = new object();
+
+        private readonly IClientSessionFactory _clientSessionFactory;
+
+        public SessionManager(IClientSessionFactory clientSessionFactory)
+        {
+            _clientSessionFactory = clientSessionFactory;
+            _session = this;
+        }
 
         public List<ClientSession> GetSessions()
         {
@@ -27,7 +35,7 @@
             {
                 int sessionId = ++_sessionId;
 
-                ClientSession session = new();
+                ClientSession session = _clientSessionFactory.Create();
                 session.SessionId = sessionId;
                 _sessions.Add(sessionId, session);
 
