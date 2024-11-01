@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Logging;
+using Server.Packet;
 using System.Net;
 using Tcp;
 
@@ -8,27 +9,33 @@ namespace Server.Session
     {
         public int SessionId { get; set; }
 
-        public ClientSession(ILogger<Tcp.Session> logger) : base(logger)
+        private readonly IServerLogger _logger;
+
+        public ClientSession(IServerLogger logger) : base(logger)
         {
         }
 
         public override void OnConnected(EndPoint endPoint)
         {
-            throw new NotImplementedException();
+            _logger.Info($"OnConnected : {endPoint}");
+            //GameLogic.Instance.PushAfter(5000, Ping);
         }
 
         public override void OnDisconnected(EndPoint endPoint)
         {
-            throw new NotImplementedException();
+            SessionManager.Instance.Remove(this);
+
+            _logger.Info($"OnDisconnected : {endPoint}");
         }
 
         public override void OnRecvPacket(ArraySegment<byte> buffer)
         {
+            //PacketManager.Instance.OnRecvPacket(this, buffer);
         }
 
         public override void OnSend(int numOfBytes)
         {
-            Console.WriteLine($"Transferred bytes: {numOfBytes}");
+            _logger.Info($"Transferred bytes: {numOfBytes}");
         }
     }
 }

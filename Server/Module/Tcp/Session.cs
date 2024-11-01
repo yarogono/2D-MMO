@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Logging;
+using Microsoft.Extensions.Logging;
 using System.Net;
 using System.Net.Sockets;
 using Tcp.Buffer;
@@ -9,7 +10,7 @@ namespace Tcp
     {
         public static readonly int HeaderSize = 2;
 
-        protected PacketSession(ILogger<Session> logger) : base(logger)
+        protected PacketSession(IServerLogger logger) : base(logger)
         {
         }
 
@@ -57,9 +58,9 @@ namespace Tcp
         public SocketAsyncEventArgs ReceiveEventArgs { get; private set; }
         public SocketAsyncEventArgs SendEventArgs { get; private set; }
 
-        private readonly ILogger<Session> _logger;
+        private readonly IServerLogger _logger;
 
-        public Session(ILogger<Session> logger)
+        public Session(IServerLogger logger)
         {
             _logger = logger;
         }
@@ -141,7 +142,7 @@ namespace Tcp
             }
             catch (Exception ex)
             {
-                _logger.LogInformation($"Session.Disconnect: {ex.Message}");
+                _logger.Info($"Session.Disconnect: {ex.Message}");
             }
 
             Clear();
@@ -169,7 +170,7 @@ namespace Tcp
             }
             catch (Exception ex)
             {
-                _logger.LogError($"Session.ResigerSend: {ex.Message}");
+                _logger.Error($"Session.ResigerSend: {ex.Message}");
             }
         }
 
@@ -191,7 +192,7 @@ namespace Tcp
                     }
                     catch (Exception e)
                     {
-                        _logger.LogError($"OnSendCompleted Failed {e}");
+                        _logger.Error($"OnSendCompleted Failed {e}");
                     }
                 }
                 else
@@ -218,7 +219,7 @@ namespace Tcp
             }
             catch (Exception e)
             {
-                _logger.LogError($"RegisterRecv Failed {e}");
+                _logger.Error($"RegisterRecv Failed {e}");
             }
         }
 
@@ -251,7 +252,7 @@ namespace Tcp
                 }
                 catch (Exception e)
                 {
-                    _logger.LogError($"OnRecvCompleted Failed {e}");
+                    _logger.Error($"OnRecvCompleted Failed {e}");
                 }
             }
             else

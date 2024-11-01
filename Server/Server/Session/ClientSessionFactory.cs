@@ -1,12 +1,13 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Logging;
+using Microsoft.Extensions.Logging;
 
 namespace Server.Session
 {
     internal class ClientSessionFactory : IClientSessionFactory
     {
-        private readonly ILogger<Tcp.Session> _logger;
+        private readonly IServerLogger _logger;
 
-        public ClientSessionFactory(ILogger<Tcp.Session> logger)
+        public ClientSessionFactory(IServerLogger logger)
         {
             _logger = logger;
         }

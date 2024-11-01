@@ -3,7 +3,6 @@ using Server.Configuration;
 using Logging;
 using Tcp;
 using Server.Data;
-using Microsoft.Extensions.Logging;
 
 namespace Server;
 
@@ -38,14 +37,15 @@ public class Program
         var moduleLogger = Engine.Resolve<IServerLogger>();
         moduleLogger.CreateLogger(factory);
 
-        var networkService = container.Resolve<INetworkService>();
-        networkService.Star();
 
         DataManager.LoadData();
 
         ServerOpt = new();
-        ServerOpt.WriteConsole();
 
+        var networkService = container.Resolve<INetworkService>();
+        networkService.Star();
+
+        ServerOpt.WriteConsole();
         Console.ReadLine();
     }
 }
