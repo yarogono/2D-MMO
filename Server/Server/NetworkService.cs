@@ -1,4 +1,5 @@
 ﻿using Server;
+using Server.Session;
 using System.Net;
 using Tcp.Listener;
 
@@ -18,7 +19,7 @@ public class NetworkService : INetworkService
         IPAddress ipAddr = ipHost.AddressList[0];
         IPEndPoint endPoint = new IPEndPoint(ipAddr, Program.ServerOpt.Port);
 
-        //ClientListener.Init(endPoint, () => { return SessionManager.Instance.Generate(); }, Program.ServerOpt.MaxConnectionCount);
+        ClientListener.Init(endPoint, () => { return SessionManager.Instance.Generate(); }, Program.ServerOpt.MaxConnectionCount);
     }
 
 }
