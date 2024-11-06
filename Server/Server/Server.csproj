@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <Folder Include="Data\Json\" />
+    <Folder Include="Game\Object\" />
     <Folder Include="Utils\" />
   </ItemGroup>
 
