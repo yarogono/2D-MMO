@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+package Protocol;
+
+import "Protocol.proto";
+option csharp_namespace = "Google.Protobuf.Protocol";
+
+message C_MeleeAttack {
+	int32 attackPlayerId = 1;
+}
+
+message S_MeleeAttack {
+	int32 attackPlayerId = 1;
+}
+
+message C_GunAttack {
+	int32 attackPlayerId = 1;
+}
+
+message S_GunAttack {
+	int32 attackPlayerId = 1;
+}
+
+message C_DamageMelee {
+	int32 targetPlayerId = 1;
+	int32 damage = 2;
+	Vec3 targetPosInfo = 3;
+	int32 meleeItemNumber = 4;
+}
+
+message S_DamageMelee {
+	int32 targetPlayerId = 1;
+	int32 damage = 2;
+}
+
+message C_DamageBullet {
+	int32 targetPlayerId = 1;
+	int32 damage = 2;
+	Vec3 targetPosInfo = 3;
+}
+
+message S_DamageBullet {
+	int32 targetPlayerId = 1;
+	int32 damage = 2;
+}
